@@ -16,13 +16,15 @@ const postFilters = [
     </ReferenceInput>,
 ];
 
-export const NotUserList = props => (
+export const AccessUserList = props => (
     <List filters={postFilters} {...props}>
-        <Datagrid rowClick="edit">
+        <Datagrid>
             <TextField label="순번" source="id" />
-            <ImageField label="사진"/>
-            <TextField label="출입시간"/>
-            <TextField label="장소"/>
+            <ImageField label="사진" />
+            <TextField label="계급" />
+            <TextField label="이름" source="name" />
+            <TextField label="군번" />
+            <TextField label="소속" />
         </Datagrid>
     </List>
 );

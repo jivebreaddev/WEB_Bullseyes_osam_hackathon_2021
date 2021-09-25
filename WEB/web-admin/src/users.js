@@ -3,9 +3,7 @@ import {
     List,
     Datagrid,
     TextField,
-    ReferenceField,
     ImageField,
-    DateField,
     EditButton,
     Edit,
     Create,
@@ -15,8 +13,15 @@ import {
     TextInput,
 } from 'react-admin';
 
+const postFilters = [
+    <TextInput source="q" label="Search" alwaysOn />,
+    <ReferenceInput source="userId" label="User" reference="users" allowEmpty>
+        <SelectInput optionText="name" />
+    </ReferenceInput>,
+];
+
 export const UserList = props => (
-    <List {...props}>
+    <List filters={postFilters} {...props}>
         <Datagrid>
             <TextField label="순번" source="id" />
             <ImageField label="사진" source="address.suite" />
