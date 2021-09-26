@@ -13,9 +13,9 @@ import { AccessUserList } from "./AccessUser";
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => (
   <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider} >
-    <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />
-    <Resource name="posts" list={NotUserList} icon={NotUserIcon} />
-    <Resource name="comments" list={AccessUserList} icon={AccessUserIcon} />
+    <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} options={{ label: '사용자' }} />
+    <Resource name="posts" list={NotUserList} icon={NotUserIcon} options={{ label: '미등록 사용자' }} />
+    <Resource name="comments" list={AccessUserList} icon={AccessUserIcon} options={{ label: '현재 출입한 사용자' }} />
   </Admin>
 );
 
