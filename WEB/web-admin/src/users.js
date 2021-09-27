@@ -8,9 +8,10 @@ import {
     Edit,
     Create,
     SimpleForm,
-    ReferenceInput,
     SelectInput,
     TextInput,
+    Show,
+    SimpleShowLayout,
 } from 'react-admin';
 
 const choices = [
@@ -25,7 +26,7 @@ const userFilters = [
 
 export const UserList = props => (
     <List filters={userFilters} {...props}>
-        <Datagrid>
+        <Datagrid rowClick="show">
             <TextField label="순번" source="id" />
             <ImageField label="사진" source="address.suite" />
             <TextField label="계급" source="address.street" />
@@ -61,4 +62,17 @@ export const UserCreate = props => (
             <TextInput label="소속" source="company.name" />
         </SimpleForm>
     </Create>
+);
+
+export const UserShow = (props) => (
+    <Show {...props}>
+        <SimpleShowLayout>
+            <TextField label="순번" source="id" />
+            <ImageField label="사진" source="address.suite" />
+            <TextField label="계급" source="address.street" />
+            <TextField label="이름" source="name" />
+            <TextField label="군번" source="phone" />
+            <TextField label="소속" source="company.name" />
+        </SimpleShowLayout>
+    </Show>
 );
