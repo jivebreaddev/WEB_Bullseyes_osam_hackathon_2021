@@ -10,6 +10,7 @@ import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
 import { AccessUserList } from "./AccessUser";
 import UserStatistics from "./UserStatistics";
+import faceRecognition from "./faceRecognition";
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
     <Resource name="posts" list={NotUserList} icon={NotUserIcon} options={{ label: '미등록 사용자' }} />
     <Resource name="comments" list={AccessUserList} icon={AccessUserIcon} options={{ label: '현재 출입한 사용자' }} />
     <Resource name="statistics" list={UserStatistics} options={{ label: '통계' }} />
+    <Resource name="face" list={faceRecognition} options={{ label: '얼굴인식' }} />
   </Admin>
 );
 
