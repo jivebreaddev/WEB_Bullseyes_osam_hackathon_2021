@@ -21,6 +21,8 @@ export const AccessUserList = props => (
         <Datagrid>
             <TextField label="순번" source="id" />
             <ImageField label="사진" />
+            <TextField label="출입시간"/>
+            <TextField label="장소"/>
             <TextField label="계급" />
             <TextField label="이름" source="name" />
             <TextField label="군번" />
