@@ -19,7 +19,7 @@ const postFilters = [
 ];
 
 export const AccessUserList = props => (
-    <div  className="access">
+    <div className="access">
         <div className="table">
             <List filters={postFilters} {...props} >
                 <Datagrid>

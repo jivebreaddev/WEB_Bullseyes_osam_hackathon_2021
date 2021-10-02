@@ -11,10 +11,11 @@ import authProvider from "./authProvider";
 import { AccessUserList } from "./AccessUser";
 import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
+import dataProvider from "./dataProvider";
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const data = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => (
-  <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider} >
+  <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={data} >
     <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} show={UserShow} icon={UserIcon} options={{ label: '사용자' }} />
     <Resource name="comments" list={AccessUserList} icon={AccessUserIcon} options={{ label: '출입한 사용자' }} />
     <Resource name="statistics" list={UserStatistics} options={{ label: '통계' }} />
