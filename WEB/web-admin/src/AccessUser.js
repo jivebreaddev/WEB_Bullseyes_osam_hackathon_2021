@@ -8,6 +8,8 @@ import {
     ReferenceInput,
     SelectInput,
 } from 'react-admin';
+import { Card, CardContent, CardHeader } from '@material-ui/core';
+import './App.css';
 
 const postFilters = [
     <TextInput source="q" label="Search" alwaysOn />,
@@ -17,14 +19,27 @@ const postFilters = [
 ];
 
 export const AccessUserList = props => (
-    <List filters={postFilters} {...props}>
-        <Datagrid>
-            <TextField label="순번" source="id" />
-            <ImageField label="사진" />
-            <TextField label="계급" />
-            <TextField label="이름" source="name" />
-            <TextField label="군번" />
-            <TextField label="소속" />
-        </Datagrid>
-    </List>
+    <div  className="access">
+        <div className="table">
+            <List filters={postFilters} {...props} >
+                <Datagrid>
+                    <TextField label="순번" source="id" />
+                    <ImageField label="사진" />
+                    <TextField label="출입시간"/>
+                    <TextField label="장소"/>
+                    <TextField label="계급" />
+                    <TextField label="이름" source="name" />
+                    <TextField label="군번" />
+                    <TextField label="소속" />
+                </Datagrid>
+            </List>
+        </div>
+
+        <div>
+            <Card className="face">
+                <CardHeader title="Welcome to the administration" />
+                <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+            </Card>
+        </div>
+    </div>
 );
