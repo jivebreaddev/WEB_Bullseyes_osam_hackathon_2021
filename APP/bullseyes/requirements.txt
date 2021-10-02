@@ -1,10 +1,14 @@
-asgiref==3.2.10
-certifi==2020.6.20
+asgiref==3.3.0
+certifi==2021.5.30
 Django==3.1.2
+django-filter==21.1
+djangorestframework==3.12.4
+importlib-metadata==4.8.1
+Markdown==3.3.4
 pip==20.2.4
 psycopg2==2.8.5
 pytz==2020.1
 setuptools==50.3.0
 sqlparse==0.4.1
 wheel==0.35.1
-psycopg2-binary>=2.8
+zipp==3.5.0
