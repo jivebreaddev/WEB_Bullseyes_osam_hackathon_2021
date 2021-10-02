@@ -8,6 +8,7 @@ class User:
     name = models.CharField(max_length=100, blank=True)
     altid = models.CharField(max_length=100, blank=True)
     company = models.CharField(max_length=100, blank=True)
+    
 class AccessUser:
     id = models.BigAutoField(primary_key=True)
     photourl = models.CharField(max_length=100, blank=True)

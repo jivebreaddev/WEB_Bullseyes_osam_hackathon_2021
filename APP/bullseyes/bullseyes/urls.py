@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from bullseyes_server.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', views.snippet_list),
+    path('accessusers/', views.snippet_list),
+    path('users/', views.snippet_list),
 ]
