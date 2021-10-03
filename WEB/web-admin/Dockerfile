@@ -1,7 +1,8 @@
 FROM node:14.18
 
 WORKDIR /WEB
-COPY package.json /WEB
+COPY package.json /WEB/package.json
+ENV PATH /WEB/node_modules/.bin:$PATH
 
 RUN npm install
 
