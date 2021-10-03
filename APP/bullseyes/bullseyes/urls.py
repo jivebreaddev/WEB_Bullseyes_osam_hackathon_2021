@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from rest_framework.urlpatterns import format_suffix_patterns
+from bullseyes_server import views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('users/', views.user_list),
+    path('users/<int:pk>', views.user_edit),
+    path('accessusers/', views.accessuser_list),
+    path('accessusers/<int:pk>', views.accessuser_edit),
+    
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
