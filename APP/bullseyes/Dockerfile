@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM bullseyes_web
 ENV PYTHONUNBUFFERED=1
-WORKDIR /code
-COPY requirements.txt /code/
+WORKDIR /APP
+COPY requirements.txt /APP
 RUN pip install -r requirements.txt
-COPY . /code/
+COPY . /APP/

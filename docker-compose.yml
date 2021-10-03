@@ -1,0 +1,30 @@
+version: "3.9"
+   
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: ./APP/bullseyes
+    command: sh -c "python manage.py collectstatic --noinput &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./APP/bullseyes:/APP
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  front:
+    build: ./WEB/web-admin
+    command: ["npm", "start"]
+    volumes:
+      - ./WEB/web_admin:/WEB
+    ports:
+      - "3000:3000"
+    
