@@ -1,23 +1,16 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
-const apiUrl = 'https://jsonplaceholder.typicode.com';
+const apiUrl = 'www.virtserver.swaggerhub.com/BULLSEY/BULLSEYES/1.0.0';
 const httpClient = fetchUtils.fetchJson;
 
 export default {
     getList: (resource, params) => {
-        const { page, perPage } = params.pagination;
-        const { field, order } = params.sort;
-        const query = {
-            sort: JSON.stringify([field, order]),
-            range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
-            filter: JSON.stringify(params.filter),
-        };
-        const url = `${apiUrl}/${resource}?${stringify(query)}`;
+        
+        const url = `${apiUrl}/${resource}/json`;
 
         return httpClient(url).then(({ headers, json }) => ({
-            data: json,
-            total: parseInt(headers.get('content-range').split('/').pop(), 10),
+            data: json
         }));
     },
 
