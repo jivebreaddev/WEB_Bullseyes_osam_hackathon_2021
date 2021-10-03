@@ -7,7 +7,7 @@ def upload_to(instance, filename):
     milliseconds = now.microsecond // 1000
     return f"images/{instance.pk}/{now:%Y%m%d%H%M%S}{extension}"
 
-class User:
+class User(models.Model):
     id = models.BigAutoField(primary_key=True)
     photourl = models.ImageField(max_length=100,upload_to=upload_to, blank=True)
     rank = models.CharField(max_length=100, blank=True)
@@ -16,7 +16,7 @@ class User:
     company = models.CharField(max_length=100, blank=True)
 
 
-class AccessUser:
+class AccessUser(models.Model):
     id = models.BigAutoField(primary_key=True)
     photourl = models.ImageField(max_length=100,upload_to=upload_to, blank=True)
     place = models.CharField(max_length=100, blank=True)

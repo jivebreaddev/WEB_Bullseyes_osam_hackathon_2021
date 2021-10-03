@@ -1,12 +1,13 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view, parser_classes
+from rest_framework.decorators import api_view, parser_classes, permission_classes
 from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
 from bullseyes_server.models import User, AccessUser
 from bullseyes_server.serializers import UserSerializer, AccessUserSerializer
-
+from rest_framework import permissions
 @api_view(['POST','GET'])
 @parser_classes([MultiPartParser,FormParser])
+@permission_classes([permissions.AllowAny])
 def user_list(request,format=None):
     """
     List all users, or create an user.
@@ -26,6 +27,7 @@ def user_list(request,format=None):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @parser_classes([MultiPartParser,FormParser])
+@permission_classes([permissions.AllowAny])
 def user_edit(request,pk,format=None):
     try:
         user = User.objects.get(pk=pk)
@@ -48,6 +50,7 @@ def user_edit(request,pk,format=None):
 
 @api_view(['POST','GET'])
 @parser_classes([MultiPartParser,FormParser])
+@permission_classes([permissions.AllowAny])
 def accessuser_list(request,format=None):
     """
     List all users, or create an user.
@@ -68,6 +71,7 @@ def accessuser_list(request,format=None):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @parser_classes([MultiPartParser,FormParser])
+@permission_classes([permissions.AllowAny])
 def accessuser_edit(request, pk,format=None):
     try:
         accessuser = AccessUser.objects.get(pk=pk)
