@@ -11,8 +11,13 @@ import authProvider from "./authProvider";
 import { AccessUserList } from "./AccessUser";
 import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
+import drfProvider from 'ra-data-django-rest-framework';
 
-const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+
+const dataProvider = drfProvider("/users");
+
+
+//const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 const App = () => (
   <Admin
     dashboard={Dashboard}

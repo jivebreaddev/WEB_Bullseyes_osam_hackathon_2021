@@ -14,3 +14,4 @@ setuptools==50.3.0
 sqlparse==0.4.1
 wheel==0.35.1
 zipp==3.5.0
+django-filter==21.1
