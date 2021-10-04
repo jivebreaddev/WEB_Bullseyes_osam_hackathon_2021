@@ -1,4 +1,4 @@
-FROM node:14.18
+FROM node:14.18.0
 
 WORKDIR /WEB
 COPY package.json /WEB/package.json
