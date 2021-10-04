@@ -24,7 +24,7 @@ services:
     build: ./WEB/web-admin
     command: ["npm", "start"]
     volumes:
-      - ./WEB/web_admin:/WEB
+      - ./WEB/web-admin:/WEB
     ports:
       - "3000:3000"
     

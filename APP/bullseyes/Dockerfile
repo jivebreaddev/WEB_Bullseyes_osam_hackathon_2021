@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM bullseyes_web
+FROM python:3
 ENV PYTHONUNBUFFERED=1
 WORKDIR /APP
 COPY requirements.txt /APP
