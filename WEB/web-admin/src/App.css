@@ -5,6 +5,11 @@
 
 .table {
   width : 1000px;
+  margin: 0 0 20px;
+}
+
+.untable {
+  width : 1000px;
 }
 
 .face {

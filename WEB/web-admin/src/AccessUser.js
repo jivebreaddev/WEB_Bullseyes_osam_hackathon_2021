@@ -19,18 +19,27 @@ const postFilters = [
 ];
 
 export const AccessUserList = props => (
-    <div  className="access">
-        <div className="table">
-            <List filters={postFilters} {...props} >
+    <div className="access">
+        <div>
+            <List className="table" perPage={10} filters={postFilters} {...props} >
                 <Datagrid>
                     <TextField label="순번" source="id" />
                     <ImageField label="사진" />
-                    <TextField label="출입시간"/>
-                    <TextField label="장소"/>
+                    <TextField label="출입시간" />
+                    <TextField label="장소" />
                     <TextField label="계급" />
-                    <TextField label="이름" source="name" />
+                    <TextField label="이름" />
                     <TextField label="군번" />
                     <TextField label="소속" />
+                </Datagrid>
+            </List>
+
+            <List className="untable" perPage={5} filters={postFilters} {...props}>
+                <Datagrid>
+                    <TextField label="순번" />
+                    <ImageField label="사진" />
+                    <TextField label="출입시간" />
+                    <TextField label="장소" source="email" />
                 </Datagrid>
             </List>
         </div>
