@@ -13,8 +13,8 @@ import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
 import drfProvider from 'ra-data-django-rest-framework';
 
-
-const dataProvider1 = drfProvider("https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev");
+const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev"
+const dataProvider1 = drfProvider(INITIAL);
 const App = () => (
 
   <Admin
@@ -44,31 +44,3 @@ const App = () => (
 );
 
 export default App;
-// import './App.css';
-// import axios from 'axios';
-// function test() {
-//   console.log("fetch start")
-//   // fetch('https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev/users/', {credentials: 'include', mode: 'no-cors'}).then(response => response.json())
-//   // .then(data => console.log(data));
-//   const response = axios.get(
-//     'https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev/users/'
-//   );
-//   console.log(response)
-// }
-
-// function App() {
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-      
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <button onClick={()=>test()}>Test</button>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

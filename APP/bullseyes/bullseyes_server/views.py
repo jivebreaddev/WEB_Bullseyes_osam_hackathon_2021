@@ -5,8 +5,11 @@ from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
 from bullseyes_server.models import User, AccessUser
 from bullseyes_server.serializers import UserSerializer, AccessUserSerializer
 from rest_framework import permissions, viewsets
+from rest_framework import mixins
 from . import filters
-
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.settings import api_settings
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
@@ -14,7 +17,53 @@ class UserViewSet(viewsets.ModelViewSet):
     search_fields = ["name"]
     permission_classes = [permissions.AllowAny]
     parser_classes = [MultiPartParser, FormParser]
-class AccessViewSet(viewsets.ModelViewSet):
+
+class AccessUserViewSet(mixins.ListModelMixin,
+                                mixins.RetrieveModelMixin,
+                                mixins.DestroyModelMixin,
+                                viewsets.GenericViewSet):
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        ###serializer.initial_data['photo'] can be accessed
+        # modify them using 
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    # modify these taking in rank, name, other recognition
+    def perform_create(self, serializer):
+        serializer.save()
+        ##serializer.save(owner_id=request.user.id)
+    def get_success_headers(self, data):
+        try:
+            return {'Location': str(data[api_settings.URL_FIELD_NAME])}
+        except (TypeError, KeyError):
+            return {}
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        # instance -> to model
+        #try printit
+        
+        
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        if getattr(instance, '_prefetched_objects_cache', None):
+            # If 'prefetch_related' has been applied to a queryset, we need to
+            # forcibly invalidate the prefetch cache on the instance.
+            instance._prefetched_objects_cache = {}
+
+        return Response(serializer.data)
+
+    def perform_update(self, serializer):
+        serializer.save()
+
+    def partial_update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        return self.update(request, *args, **kwargs)
+class AccessViewSet(AccessUserViewSet):
     queryset = AccessUser.objects.all().order_by('id')
     serializer_class = AccessUserSerializer
     filterset_class = filters.AccessUserFilter
