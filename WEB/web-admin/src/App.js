@@ -25,11 +25,11 @@ const App = () => (
     
     <Resource
       name="users"
-      list={UserList}
+      list={UserList} create={UserCreate} edit={UserEdit} show={UserShow} icon={UserIcon}
       options={{ label: "사용자" }}
     />
     <Resource
-      name="access"
+      name="accessusers"
       list={AccessUserList}
       icon={AccessUserIcon}
       options={{ label: "출입한 사용자" }}
