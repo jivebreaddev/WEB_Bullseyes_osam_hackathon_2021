@@ -8,14 +8,14 @@ from rest_framework import permissions, viewsets
 from . import filters
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     filterset_class = filters.UserFilter
     search_fields = ["name"]
     permission_classes = [permissions.AllowAny]
     parser_classes = [MultiPartParser, FormParser]
 class AccessViewSet(viewsets.ModelViewSet):
-    queryset = AccessUser.objects.all()
+    queryset = AccessUser.objects.all().order_by('id')
     serializer_class = AccessUserSerializer
     filterset_class = filters.AccessUserFilter
     permission_classes = [permissions.AllowAny]

@@ -14,7 +14,7 @@ import faceRecognition from "./faceRecognition";
 import drfProvider from 'ra-data-django-rest-framework';
 
 
-const dataProvider = drfProvider("/users");
+const dataProvider = drfProvider("https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev");
 
 
 //const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
