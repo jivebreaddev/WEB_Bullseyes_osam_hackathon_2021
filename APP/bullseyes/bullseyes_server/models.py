@@ -1,11 +1,9 @@
 from django.db import models
-
+import os
 # Create your models here.
 def upload_to(instance, filename):
-    now = timezone.now()
     base, extension = os.path.splitext(filename.lower())
-    milliseconds = now.microsecond // 1000
-    return f"images/{instance.pk}/{now:%Y%m%d%H%M%S}{extension}"
+    return f"images/{instance.pk}{extension}"
 
 class User(models.Model):
     id = models.BigAutoField(primary_key=True)

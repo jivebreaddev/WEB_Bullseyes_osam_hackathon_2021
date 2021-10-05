@@ -10,9 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
         return request.build_absolute_uri(photo_url)
 class AccessUserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = AccessUser
         fields = ['id', 'photourl', 'place', 'time', 'rank', 'name','altid','company']
     def get_photo_url(self, obj):
         request = self.context.get('request')
         photo_url = obj.photourl
         return request.build_absolute_uri(photo_url)
+

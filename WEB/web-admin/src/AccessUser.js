@@ -24,13 +24,13 @@ export const AccessUserList = props => (
             <List filters={postFilters} {...props} >
                 <Datagrid>
                     <TextField label="순번" source="id" />
-                    <ImageField label="사진" />
-                    <TextField label="출입시간"/>
-                    <TextField label="장소"/>
-                    <TextField label="계급" />
+                    <ImageField label="사진"source="photourl" />
+                    <TextField label="출입시간"source="place"/>
+                    <TextField label="장소"source="time"/>
+                    <TextField label="계급" source="rank"/>
                     <TextField label="이름" source="name" />
-                    <TextField label="군번" />
-                    <TextField label="소속" />
+                    <TextField label="군번" source="altid"/>
+                    <TextField label="소속" source="company"/>
                 </Datagrid>
             </List>
         </div>
