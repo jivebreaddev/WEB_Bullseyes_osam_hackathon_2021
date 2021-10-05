@@ -14,26 +14,11 @@ import {
   SimpleShowLayout,
 } from "react-admin";
 
-const choices = [
-  { id: "Leanne Graham", name: "Leanne Graham" },
-  { id: "gg", name: "gg" },
-];
-
-const userFilters = [
-  <TextInput label="Search" source="q" alwaysOn />,
-  <SelectInput source="name" choices={choices} />,
-];
 
 export const UserList = (props) => (
-  <List filters={userFilters} {...props}>
-    <Datagrid rowClick="show">
+  <List {...props}>
+    <Datagrid>
       <TextField label="순번" source="id" />
-      <ImageField label="사진" source="address.suite" />
-      <TextField label="계급" source="address.street" />
-      <TextField label="이름" source="name" />
-      <TextField label="군번" source="phone" />
-      <TextField label="소속" source="company.name" />
-      <EditButton />
     </Datagrid>
   </List>
 );
