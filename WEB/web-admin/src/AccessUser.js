@@ -45,9 +45,9 @@ export const AccessUserList = props => (
         </div>
 
         <div>
-            <Card className="face">
-                <CardHeader title="Welcome to the administration" />
-                <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+            <Card className="face" >
+                <script defer src="Camera.js"></script>
+                <video id="video" width="720" height="560" autoPlay muted></video>
             </Card>
         </div>
     </div>

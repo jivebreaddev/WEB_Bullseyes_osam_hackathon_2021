@@ -4,15 +4,25 @@
 }
 
 .table {
-  width : 1000px;
+  width: 1000px;
   margin: 0 0 20px;
 }
 
 .untable {
-  width : 1000px;
+  width: 1000px;
 }
 
 .face {
-  width : 600px;
-  height : 800px;
+  width: 600px;
+  height: 800px;
+}
+
+.facebox {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
