@@ -16,14 +16,18 @@ class UserViewSet(viewsets.ModelViewSet):
     filterset_class = filters.UserFilter
     search_fields = ["name"]
     permission_classes = [permissions.AllowAny]
-    parser_classes = [MultiPartParser, FormParser]
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
 
 class AccessUserViewSet(mixins.ListModelMixin,
                                 mixins.RetrieveModelMixin,
                                 mixins.DestroyModelMixin,
                                 viewsets.GenericViewSet):
     def create(self, request, *args, **kwargs):
+        print(request.data)
+        print("hah")
         serializer = self.get_serializer(data=request.data)
+        print(request.data)
+        print("hah")
         serializer.is_valid(raise_exception=True)
         ###serializer.initial_data['photo'] can be accessed
         # modify them using 
@@ -40,6 +44,8 @@ class AccessUserViewSet(mixins.ListModelMixin,
         except (TypeError, KeyError):
             return {}
     def update(self, request, *args, **kwargs):
+        print(request.data)
+        print("hah")
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
         # instance -> to model
@@ -69,7 +75,7 @@ class AccessViewSet(AccessUserViewSet):
     filterset_class = filters.AccessUserFilter
     permission_classes = [permissions.AllowAny]
     search_fields = ["name"]
-    parser_classes = [MultiPartParser, FormParser]
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
 # @api_view(['POST','GET'])
 # @parser_classes([MultiPartParser,FormParser])
 # @permission_classes([permissions.AllowAny])

@@ -15,3 +15,4 @@ sqlparse==0.4.1
 wheel==0.35.1
 zipp==3.5.0
 django-cors-headers==3.9.0
+django-extra-fields==3.0.2

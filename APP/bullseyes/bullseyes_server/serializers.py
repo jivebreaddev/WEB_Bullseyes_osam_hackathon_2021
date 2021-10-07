@@ -1,9 +1,11 @@
 from rest_framework import serializers
 from bullseyes_server.models import User, AccessUser
+from drf_extra_fields.fields import Base64ImageField
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'photourl', 'rank', 'name', 'altid', 'company']
+        photourl = Base64ImageField(required=False)
+        fields = ['id', 'rank', 'name', 'altid', 'company']
     def get_photo_url(self, obj):
         request = self.context.get('request')
         photo_url = obj.photourl
@@ -11,7 +13,8 @@ class UserSerializer(serializers.ModelSerializer):
 class AccessUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = AccessUser
-        fields = ['id', 'photourl', 'place', 'time', 'rank', 'name','altid','company']
+        photourl = Base64ImageField(required=False)
+        fields = ['id', 'place', 'time', 'rank', 'name','altid','company']
     def get_photo_url(self, obj):
         request = self.context.get('request')
         photo_url = obj.photourl

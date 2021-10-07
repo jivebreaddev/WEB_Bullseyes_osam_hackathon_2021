@@ -4,12 +4,15 @@ import {
   Datagrid,
   TextField,
   ImageField,
+  ImageInput,
   EditButton,
   Edit,
   Create,
   SimpleForm,
   SelectInput,
   TextInput,
+  FileField,
+  FileInput,
   Show,
   SimpleShowLayout
 } from "react-admin";
@@ -35,7 +38,7 @@ export const UserEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput label="순번" source="id" />
-      <ImageField label="사진" source="photourl" />
+      <ImageInput label="사진" source="photourl" />
       <TextInput label="계급" source="rank" />
       <TextInput label="이름" source="name" />
       <TextInput label="군번" source="altid" />
@@ -48,7 +51,12 @@ export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput label="순번" source="id" />
-      <ImageField  label="사진" source="photourl" />
+      <FileInput source="photourl" label="Related files">
+        <FileField source="src" title="title" />
+      </FileInput>
+      {/* <ImageInput label="사진" source="photourl" accept="image/*">
+      <ImageField source="src" title="title" />  
+      </ImageInput> */}
       <TextInput label="계급" source="rank" />
       <TextInput label="이름" source="name" />
       <TextInput label="군번" source="altid" />
