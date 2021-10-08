@@ -7,6 +7,6 @@ ENV PATH /WEB/node_modules/.bin:$PATH
 
 RUN npm install
 
-ENV Django_APP_HOST_IP_ADDRESS https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev
+ENV Django_APP_HOST_IP_ADDRESS https://osamhack2021-ai-web-bullseyes-bullseyes-7v55qqw5xfxv6w-3000.githubpreview.dev
 EXPOSE 3000
 CMD ["npm", "start"]

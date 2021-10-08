@@ -13,6 +13,7 @@ import {
   Show,
   SimpleShowLayout
 } from "react-admin";
+
 const userFilters = [
   <TextInput label="Search" source="q" alwaysOn />
 ];

@@ -13,7 +13,7 @@ import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
 import drfProvider from 'ra-data-django-rest-framework';
 
-const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev"
+const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-7v55qqw5xfxv6w-8000.githubpreview.dev"
 const dataProvider1 = drfProvider(INITIAL);
 const App = () => (
 

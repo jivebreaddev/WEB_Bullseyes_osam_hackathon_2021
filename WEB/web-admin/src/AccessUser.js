@@ -8,8 +8,32 @@ import {
     ReferenceInput,
     SelectInput,
 } from 'react-admin';
-import { Card, CardContent, CardHeader } from '@material-ui/core';
+import { CardHeader,  Card as MuiCard, CardContent, withStyles } from '@material-ui/core';
+import { LastVisitedFilter, HasOrderedFilter, HasNewsletterFilter } from './sideFilter';
 import './App.css';
+
+const FilterSidebar = () => (
+    <Card>
+        <CardContent>
+            <LastVisitedFilter />
+            <HasOrderedFilter />
+            <HasNewsletterFilter />
+        </CardContent>
+    </Card>
+);
+
+const Card = withStyles(theme => ({
+    root: {
+        [theme.breakpoints.up('sm')]: {
+            order: -1, // display on the left rather than on the right of the list
+            width: '15em',
+            marginRight: '1em',
+        },
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
+    },
+}))(MuiCard);
 
 const postFilters = [
     <TextInput source="q" label="Search" alwaysOn />,
@@ -21,7 +45,7 @@ const postFilters = [
 export const AccessUserList = props => (
     <div  className="access">
         <div className="table">
-            <List filters={postFilters} {...props} >
+            <List aside={<FilterSidebar />} filters={postFilters} {...props} >
                 <Datagrid>
                     <TextField label="순번" source="id" />
                     <ImageField label="사진"source="photourl" />
