@@ -10,26 +10,15 @@ from . import filters
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('id')
-    serializer_class = UserSerializer
-    filterset_class = filters.UserFilter
-    search_fields = ["name"]
-    permission_classes = [permissions.AllowAny]
-    parser_classes = [JSONParser, MultiPartParser, FormParser]
-
 class AccessUserViewSet(mixins.ListModelMixin,
                                 mixins.RetrieveModelMixin,
                                 mixins.DestroyModelMixin,
                                 viewsets.GenericViewSet):
     def create(self, request, *args, **kwargs):
         print(request.data)
-        print("hah")
         serializer = self.get_serializer(data=request.data)
-        print(request.data)
-        print("hah")
         serializer.is_valid(raise_exception=True)
-        ###serializer.initial_data['photo'] can be accessed
+        ###serializer.initial_data['photourl'] can be accessed
         # modify them using 
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
@@ -69,6 +58,15 @@ class AccessUserViewSet(mixins.ListModelMixin,
     def partial_update(self, request, *args, **kwargs):
         kwargs['partial'] = True
         return self.update(request, *args, **kwargs)
+class UserViewSet(AccessUserViewSet):
+    queryset = User.objects.all().order_by('id')
+    serializer_class = UserSerializer
+    filterset_class = filters.UserFilter
+    search_fields = ["name"]
+    permission_classes = [permissions.AllowAny]
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
+
+
 class AccessViewSet(AccessUserViewSet):
     queryset = AccessUser.objects.all().order_by('id')
     serializer_class = AccessUserSerializer
