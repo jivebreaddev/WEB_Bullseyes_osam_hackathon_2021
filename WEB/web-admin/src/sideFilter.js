@@ -5,11 +5,10 @@ import MailIcon from '@material-ui/icons/MailOutline';
 import LocalOfferIcon from '@material-ui/icons/LocalOfferOutlined';
 import { FilterList, FilterListItem } from 'react-admin';
 import {
+    startOfYesterday,
     endOfYesterday,
     startOfWeek,
-    subWeeks,
-    startOfMonth,
-    subMonths,
+    subWeeks
 } from 'date-fns';
 
 export const LastVisitedFilter = () => (
@@ -17,22 +16,22 @@ export const LastVisitedFilter = () => (
         <FilterListItem
             label="오늘"
             value={{
-                last_seen_gte: endOfYesterday().toISOString(),
-                last_seen_lte: undefined,
+                time__gte: endOfYesterday().toISOString(),
+                time__lte: undefined,
             }}
         />
         <FilterListItem
             label="어제"
             value={{
-                last_seen_gte: startOfWeek(new Date()).toISOString(),
-                last_seen_lte: undefined,
+                time__gte: startOfYesterday(new Date()).toISOString(),
+                time__lte: undefined,
             }}
         />
         <FilterListItem
             label="날짜 SEARCH TAB"
             value={{
-                last_seen_gte: subWeeks(startOfWeek(new Date()), 1).toISOString(),
-                last_seen_lte: startOfWeek(new Date()).toISOString(),
+                time__gte: subWeeks(startOfWeek(new Date()), 1).toISOString(),
+                time__lte: startOfWeek(new Date()).toISOString(),
             }}
         />
     </FilterList>

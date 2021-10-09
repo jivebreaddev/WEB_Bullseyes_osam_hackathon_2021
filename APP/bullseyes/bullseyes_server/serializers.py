@@ -4,6 +4,7 @@ from drf_extra_fields.fields import Base64ImageField
 class UserSerializer(serializers.ModelSerializer):
     photourl = Base64ImageField(required=False, use_url=True)
     image_url = serializers.SerializerMethodField('get_photo_url')
+    
     class Meta:
         model = User
         fields = ['id','photourl', 'rank', 'name', 'altid', 'company','image_url']
@@ -14,6 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
 class AccessUserSerializer(serializers.ModelSerializer):
     photourl = Base64ImageField(required=False, use_url=True)
     image_url = serializers.SerializerMethodField('get_photo_url')
+    time = serializers.DateTimeField()
     class Meta:
         model = AccessUser
         
