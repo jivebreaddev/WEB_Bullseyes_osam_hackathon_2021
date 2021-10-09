@@ -19,6 +19,7 @@ import {
 } from 'react-admin';
 import { CardHeader,  Card as MuiCard, CardContent, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
+import FaceVideo from "./faceRecognition";
 import './App.css';
 
 
@@ -58,10 +59,7 @@ export const AccessUserList = props => (
             </List>
         </div>
         <div>
-            <Card className="face">
-                <CardHeader title="Welcome to the administration" />
-                <CardContent>Lorem ipsum sic dolor amet...</CardContent>
-            </Card>
+          <FaceVideo></FaceVideo>
         </div>
     </div>
 );
