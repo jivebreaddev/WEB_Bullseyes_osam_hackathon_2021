@@ -1,18 +1,17 @@
 import * as faceApi from "face-api.js";
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
 class FaceApi extends React.Component{
 video = React.createRef();
 canvas = React.createRef();
 
-componentDidMount() {
-    this.run();
+  componentDidMount() {
+      this.run();
   }
-
+  
   run = async () => {
     try {
-      await faceApi.nets.tinyFaceDetector.load("/models/");
-      await faceApi.loadFaceExpressionModel(`/models/`);
+      await faceApi.nets.tinyFaceDetector.loadFromUri('./weights');
       this.mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: "user" }
       });
@@ -34,24 +33,24 @@ onPlay = async () => {
     this.video.current.ended ||
     !faceApi.nets.tinyFaceDetector.params
   ) {
-    setTimeout(() => this.onPlay());
+    const canvas = faceapi.createCanvasFromMedia(this.video);
+    const size = {width: this.video.width, height: this.video.height}
+
+
+    const results = await faceApi.detectAllFaces(this.video.current, options)
+    const resizedResults = faceapi.resizeResults(results,displaySize)
+    canvas.getContext('2d').clearRect(0,0,canvas.width, canvas.height)
+    faceApiapi.draw.drawDetections(canvas, resizedResults)
+    setTimeout(() => this.onPlay(), 1000);
     return;
-  }
+  };
+}
+//   if (result) {
+//     faceApi.draw.drawDetections('overlay', result.map(res => res.faceDetection), { withScore: false });
+//   }
 
-  const options = new faceApi.TinyFaceDetectorOptions({
-    inputSize: 512,
-    scoreThreshold: 0.5
-  });
-
-  const result = await faceApi
-    .detectSingleFace(this.video.current, options)
-
-  if (result) {
-    faceapi.drawDetection('overlay', mtcnnResults.map(res => res.faceDetection), { withScore: false });
-  }
-
-  setTimeout(() => this.onPlay(), 1000);
-};
+//   setTimeout(() => this.onPlay(), 1000);
+// };
 render(){
 return (
 <div style={{ width: "100%", height: "100vh", position: "relative" }}>
@@ -73,6 +72,6 @@ return (
           <canvas id="overlay" />
 </div>
 );
-          }}
-
+  };
+};
 export default FaceApi;
