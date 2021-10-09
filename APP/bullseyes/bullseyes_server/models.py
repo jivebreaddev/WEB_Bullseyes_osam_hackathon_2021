@@ -12,14 +12,14 @@ class User(models.Model):
     name = models.CharField(max_length=100, blank=True)
     altid = models.CharField(max_length=100, blank=True)
     company = models.CharField(max_length=100, blank=True)
-
+    
 
 class AccessUser(models.Model):
     id = models.BigAutoField(primary_key=True)
     photourl = models.ImageField(max_length=100,upload_to=upload_to, blank=True)
     place = models.CharField(max_length=100, blank=True)
-    time = models.CharField(blank=False, max_length=100)
-    rank = models.CharField(blank=False, max_length=100)
-    name = models.CharField(blank=False, max_length=100)
-    altid = models.CharField(blank=False, max_length=100)    
-    company = models.CharField(blank=False, max_length=100)    
+    time = models.DateTimeField(blank=True)
+    rank = models.CharField(blank=True, max_length=100)
+    name = models.CharField(blank=True, max_length=100)
+    altid = models.CharField(blank=True, max_length=100)    
+    company = models.CharField(blank=True, max_length=100)    
