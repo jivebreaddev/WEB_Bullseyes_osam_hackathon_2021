@@ -12,7 +12,7 @@ class User(models.Model):
     name = models.CharField(max_length=100, blank=True)
     altid = models.CharField(max_length=100, blank=True)
     company = models.CharField(max_length=100, blank=True)
-
+    
 
 class AccessUser(models.Model):
     id = models.BigAutoField(primary_key=True)

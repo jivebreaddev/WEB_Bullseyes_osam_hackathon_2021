@@ -15,10 +15,31 @@ import {
     Show,
     SimpleShowLayout
 } from 'react-admin';
-import { Card, CardContent, CardHeader } from '@material-ui/core';
+import { CardHeader,  Card as MuiCard, CardContent, withStyles } from '@material-ui/core';
+import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
 import './App.css';
 
 
+const Card = withStyles(theme => ({
+    root: {
+        [theme.breakpoints.up('sm')]: {
+            order: -1, // display on the left rather than on the right of the list
+            width: '15em',
+            marginRight: '1em',
+        },
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
+    },
+}))(MuiCard);
+const FilterSidebar = () => (
+  <Card>
+      <CardContent>
+          <LastVisitedFilter />
+          <HasOrderedFilter />
+      </CardContent>
+  </Card>
+);
 // export const AccessUserList = props => (
 //     <div  className="access">
 //         <div className="table">
@@ -47,7 +68,7 @@ import './App.css';
 export const AccessUserList = props => (
     <div  className="access">
         <div className="table">
-            <List  {...props} >
+            <List  aside={<FilterSidebar />} {...props} >
                 <Datagrid rowClick="show">
                 <TextField label="순번" source="id" />
                 <ImageField label="사진"source="photourl" />
