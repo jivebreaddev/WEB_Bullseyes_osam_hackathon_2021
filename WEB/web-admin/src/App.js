@@ -8,12 +8,12 @@ import NotUserIcon from "@material-ui/icons/Warning";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
-import { AccessUserList } from "./AccessUser";
+import AccessUser from "./AccessUser";
 import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
 import drfProvider from 'ra-data-django-rest-framework';
 
-const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev"
+const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-q74x46j562xxgg-8000.githubpreview.dev/"
 const dataProvider1 = drfProvider(INITIAL);
 const App = () => (
 
@@ -30,9 +30,9 @@ const App = () => (
     />
     <Resource
       name="accessusers"
-      list={AccessUserList}
       icon={AccessUserIcon}
       options={{ label: "출입한 사용자" }}
+      {...AccessUser}
     />
     <Resource
       name="statistics"

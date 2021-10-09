@@ -1,0 +1,13 @@
+.access {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .table {
+    width : 1000px;
+  }
+  
+  .face {
+    width : 600px;
+    height : 800px;
+  }
