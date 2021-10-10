@@ -163,9 +163,9 @@ const AccessUserCreate = ({ onCancel, ...props }) => (
     <Edit {...props}>
       <SimpleForm>
       <TextInput label="순번" source="id" />
-        <ImageInput label="사진" source="photourl">
-        <ImageField source="src" title="title" />  
-        </ImageInput>
+      <FileInput label="사진" source="photourl" >
+        <FileField source="src" title="title"/>  
+      </FileInput>
         <DateField label="출입시간"source="time" showTime/>
         <TextInput label="계급" source="rank" />
         <TextInput label="이름" source="name" />
