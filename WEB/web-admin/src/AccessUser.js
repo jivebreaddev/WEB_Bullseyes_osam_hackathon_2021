@@ -22,7 +22,7 @@ import {
     translate,
     Toolbar,
     SaveButton,
-    EditButton
+    EditButton,
 } from 'react-admin';
 import { CardHeader,  Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
@@ -76,11 +76,11 @@ class AccessUserList extends React.Component {
                   <Datagrid rowClick="show">
                     <TextField label="순번" source="id" />
                     <ImageField label="사진"source="photourl" />
-                    <DateField label="출입시간"source="time" showTime/>
-                    <TextField label="계급" source="rank"/>
+                    <DateField label="출입시간"source="time" showTime />
+                    <TextField label="계급" source="rank" />
                     <TextField label="이름" source="name" />
-                    <TextField label="군번" source="altid"/>
-                    <TextField label="소속" source="company"/>
+                    <TextField label="군번" source="altid" />
+                    <TextField label="소속" source="company" />
                     <EditButton />
                   </Datagrid>
               </List>
@@ -166,7 +166,7 @@ const AccessUserCreate = ({ onCancel, ...props }) => (
       <FileInput label="사진" source="photourl" >
         <FileField source="src" title="title"/>  
       </FileInput>
-        <DateField label="출입시간"source="time" showTime/>
+        <DateField label="출입시간"source="time" />
         <TextInput label="계급" source="rank" />
         <TextInput label="이름" source="name" />
         <TextInput label="군번" source="altid" />
