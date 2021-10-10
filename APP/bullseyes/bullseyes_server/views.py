@@ -22,7 +22,7 @@ class AccessUserViewSet(mixins.ListModelMixin,
         # modify them using 
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response({'data':serializer.initial_data}, status=status.HTTP_201_CREATED, headers=headers)
     # modify these taking in rank, name, other recognition
     def perform_create(self, serializer):
         serializer.save()
@@ -50,7 +50,7 @@ class AccessUserViewSet(mixins.ListModelMixin,
             # forcibly invalidate the prefetch cache on the instance.
             instance._prefetched_objects_cache = {}
 
-        return Response(serializer.data)
+        return Response({'data':serializer.initial_data})
 
     def perform_update(self, serializer):
         serializer.save()
@@ -62,7 +62,6 @@ class UserViewSet(AccessUserViewSet):
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     filterset_class = filters.UserFilter
-    search_fields = ["name"]
     permission_classes = [permissions.AllowAny]
     parser_classes = [JSONParser, MultiPartParser, FormParser]
 
@@ -72,7 +71,6 @@ class AccessViewSet(AccessUserViewSet):
     serializer_class = AccessUserSerializer
     filterset_class = filters.AccessUserFilter
     permission_classes = [permissions.AllowAny]
-    search_fields = ["name"]
     parser_classes = [JSONParser, MultiPartParser, FormParser]
 # @api_view(['POST','GET'])
 # @parser_classes([MultiPartParser,FormParser])
