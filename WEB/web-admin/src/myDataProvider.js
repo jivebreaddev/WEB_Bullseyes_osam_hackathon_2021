@@ -1,5 +1,5 @@
 import drfProvider from 'ra-data-django-rest-framework';
-const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-jj7g79vp9356w9-8000.githubpreview.dev"
+const INITIAL = "https://osamhack2021-ai-web-bullseyes-bullseyes-7v55qqw5xfxv6w-8000.githubpreview.dev"
 const dataProvider = drfProvider(INITIAL);
 
 const myDataProvider = {
