@@ -27,9 +27,9 @@
  - DB 등 사용한 다른 프로그램 
  
 ### Front-end
- -  react.js, vue.js 등 사용한 front-end 프레임워크 
+ -  react.js 사용한 front-end 프레임워크 
  -  UI framework
- - 기타 사용한 라이브러리
+ - 기타 사용한 라이브러리 (react-admin)
 
 ## 설치 안내 (Installation Process)
 ```bash
