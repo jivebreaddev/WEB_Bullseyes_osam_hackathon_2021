@@ -5,11 +5,12 @@ import { AccessUserEdit, AccessUserCreate, AccessUserShow } from "./AccessUser";
 import AccessUser from "./AccessUser";
 import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
-import Dashboard from "./Dashboard";
+import { Dashboard } from './dashboard';
 import authProvider from "./authProvider";
 import UserStatistics from "./UserStatistics";
 import faceRecognition from "./faceRecognition";
 import myDataProvider from "./myDataProvider";
+import MyLayout from './MyLayout';
 const dataProvider1 = myDataProvider
 const App = () => (
 
@@ -17,12 +18,14 @@ const App = () => (
     dashboard={Dashboard}
     authProvider={authProvider}
     dataProvider={dataProvider1}
+    layout={MyLayout}
   >
 
     <Resource
       name="users"
       list={UserList} create={UserCreate} edit={UserEdit} show={UserShow} icon={UserIcon}
       options={{ label: "사용자" }}
+      layout={MyLayout}
     />
     <Resource
       name="accessusers"

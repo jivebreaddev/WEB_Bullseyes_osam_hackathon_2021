@@ -24,7 +24,7 @@ import {
     SaveButton,
     EditButton,
 } from 'react-admin';
-import { CardHeader,  Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
+import { CardHeader, Card, Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
 import './App.css';
 import { Route } from 'react-router';
@@ -40,7 +40,7 @@ const styles = {
   }
 };
 
-const Card = withStyles(theme => ({
+const FilterCard = withStyles(theme => ({
     root: {
         [theme.breakpoints.up('sm')]: {
             order: -1, // display on the left rather than on the right of the list
@@ -53,12 +53,12 @@ const Card = withStyles(theme => ({
     },
 }))(MuiCard);
 const FilterSidebar = () => (
-  <Card>
+  <FilterCard>
       <CardContent>
           <LastVisitedFilter />
           <HasOrderedFilter />
       </CardContent>
-  </Card>
+  </FilterCard>
 );
 const ListActions = ({ basePath }) => (
   <CardActions>
