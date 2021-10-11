@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import { UserList, UserEdit, UserCreate, UserShow } from "./users";
-import { AccessUserList, AccessUserEdit, AccessUserCreate, AccessUserShow } from "./AccessUser";
+import { AccessUserEdit, AccessUserCreate, AccessUserShow } from "./AccessUser";
+import AccessUser from "./AccessUser";
 import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
 import Dashboard from "./Dashboard";
@@ -25,7 +26,7 @@ const App = () => (
     />
     <Resource
       name="accessusers"
-      list={AccessUserList} create={AccessUserCreate} edit={AccessUserEdit} show={AccessUserShow} icon={AccessUserIcon}
+      list={AccessUser} show={AccessUserShow} icon={AccessUserIcon}
       options={{ label: "출입한 사용자" }}
     />
     <Resource
