@@ -15,11 +15,12 @@ import {
     SelectInput,
     TextInput,
     Show,
-    SimpleShowLayout
+    SimpleShowLayout,
+    useListContext
 } from 'react-admin';
 import { CardHeader,  Card as MuiCard, CardContent, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
-import FaceVideo from "./faceRecognition";
+// import FaceVideo from "./faceRecognition";
 import './App.css';
 
 
@@ -44,9 +45,11 @@ const FilterSidebar = () => (
   </Card>
 );
 export const AccessUserList = props => (
+  
+  // [] = useEffect()
     <div  className="access">
         <div className="table">
-            <List  aside={<FilterSidebar />} {...props} >
+            <List aside={<FilterSidebar />} {...props} >
                 <Datagrid rowClick="show">
                 <TextField label="순번" source="id" />
                 <ImageField label="사진"source="photourl" />
@@ -58,13 +61,11 @@ export const AccessUserList = props => (
                 </Datagrid>
             </List>
         </div>
-        <div>
-          <FaceVideo></FaceVideo>
-        </div>
     </div>
 );
 
 export const AccessUserCreate = (props) => (
+  
     <Create {...props}>
       <SimpleForm>
         <TextInput label="순번" source="id" />
