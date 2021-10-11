@@ -26,7 +26,7 @@ const App = () => (
     />
     <Resource
       name="accessusers"
-      list={AccessUser} show={AccessUserShow} icon={AccessUserIcon}
+      list={AccessUser} create={AccessUserCreate} show={AccessUserShow} icon={AccessUserIcon}
       options={{ label: "출입한 사용자" }}
     />
     <Resource

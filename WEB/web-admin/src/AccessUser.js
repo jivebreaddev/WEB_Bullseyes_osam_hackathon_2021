@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect, useRef, memo, Fragment } from "react";
 import {
     List,
     Datagrid,
@@ -35,7 +35,7 @@ import { connect } from "react-redux";
 import { push } from "react-router-redux";
 import Button from '@material-ui/core/Button';
 import { mergeClasses } from "@material-ui/styles";
-
+import ImageDetection from "./FaceApi";
 const styles = {
   drawerContent: {
     width: 300
@@ -69,25 +69,50 @@ const ListActions = ({ basePath }) => (
   </CardActions>
 );
 
+const ShowList = (props) =>{
+  const [trial,setTrial] = useState(false);
+  const {refetch}=useListContext();
+  useEffect(() => {
+    
+    setTrial(false);
+  },[trial]);
+  
+// refetch();
+const toChange = () =>{
+  setTrial(False)
+}
+  return(
+    <Fragment>
+    <div className="table">
+    <List aside={<FilterSidebar />} {...props} >
+        <Datagrid rowClick="show">
+          <TextField label="순번" source="id" />
+          <ImageField label="사진"source="photourl" />
+          <DateField label="출입시간"source="time" showTime />
+          <TextField label="계급" source="rank" />
+          <TextField label="이름" source="name" />
+          <TextField label="군번" source="altid" />
+          <TextField label="소속" source="company" />
+          <EditButton />
+        </Datagrid>
+    </List>
+    </div>
+    <div>
+    <Card className="face">
+        <memo><ImageDetection toChange={toChange}></ImageDetection></memo>
+    </Card>
+    </div>
+    </Fragment>
+  );
+}
 class AccessUserList extends React.Component {
+
   render() {
     const { push, classes, ...props} = this.props;
     return (
       <div className="access">
-           <div className="table">
-              <List aside={<FilterSidebar />} {...props} actions={<ListActions/>}>
-                  <Datagrid rowClick="show">
-                    <TextField label="순번" source="id" />
-                    <ImageField label="사진"source="photourl" />
-                    <DateField label="출입시간"source="time" showTime />
-                    <TextField label="계급" source="rank" />
-                    <TextField label="이름" source="name" />
-                    <TextField label="군번" source="altid" />
-                    <TextField label="소속" source="company" />
-                    <EditButton />
-                  </Datagrid>
-              </List>
-              <Route path="/accessusers/create">
+        <ShowList {...props}></ShowList>
+        <Route path="/accessusers/create">
                 {({match}) => (
                   <Drawer open={!!match} anchor="left" onClose={this.handleClose}>
                     <AccessUserCreate className={classes.drawerContent} onCancel={this.handleClose} {...props} />
@@ -115,13 +140,6 @@ class AccessUserList extends React.Component {
                   );
                 }}
               </Route>
-          </div>
-          <div>
-              <Card className="face">
-                  <CardHeader title="Welcome to the administration" />
-                  <CardContent>Lorem ipsum sic dolor amet...</CardContent>
-              </Card>
-          </div>
       </div>
     );
   }
@@ -146,7 +164,7 @@ const AccessUserCreateToolbar = translate(({ onCancel, translate, ...props }) =>
   </Toolbar>
 ));
 
-const AccessUserCreate = ({ onCancel, ...props }) => (
+export const AccessUserCreate = ({ onCancel, ...props }) => (
   <Create title=" " {...props}>
     <SimpleForm toolbar={<AccessUserCreateToolbar onCancel={onCancel} />}>
       <TextInput label="순번" source="id" />

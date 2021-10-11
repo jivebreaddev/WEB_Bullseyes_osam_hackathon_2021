@@ -8,10 +8,11 @@
 // export default FaceApi;
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
-import faceApi from "face-api.js";
+import * as faceApi from "face-api.js";
 import { useMutation } from "react-admin";
 import { startOfYesterday } from "date-fns";
-//import '@tensorflow/tfjs-node';
+import axios from 'axios';
+// import '@tensorflow/tfjs-node';
 import "./styles.css";
 //const [refetch] = useListContext()
 //useeffect(refetch,[some value that ])
@@ -44,6 +45,7 @@ const ImageDetection = ({ record }) => {
           setupVideo
         );
         setInitialized(true);
+        setDate(new Date());
       };
       models();
     }, []);
@@ -55,8 +57,18 @@ const ImageDetection = ({ record }) => {
         let faceImages = await faceApi.extractFaces(Image, extractRegions);
         faceImages.forEach((canvas) => {
           setPic(canvas.toDataURL());
+          send(canvas.toDataURL())
+          setDate(new Date());
+          axios({
+            method: 'post',
+            url: 'https://osamhack2021-ai-web-bullseyes-bullseyes-pjw6w945935xx-8000.githubpreview.dev/accessusers/',
+            data: {
+              photourl: canvas.toDataURL(), time: date.toISOString()
+            }
+          });
         });
-        send(canvas.toDataURL())
+        
+
       }
     }
     const setupVideo = () => {
@@ -92,7 +104,7 @@ const ImageDetection = ({ record }) => {
           .clearRect(0, 0, displayWidth, displayHeight);
         faceApi.draw.drawDetections(canvasRef.current, resizedDectect);
         const box = { x: 161, y: 180, width: 128, height: 128 };
-        // see DrawBoxOptions below
+        
         const drawOptions = {
           label: "Put Your Face Here",
           lineWidth: 5
