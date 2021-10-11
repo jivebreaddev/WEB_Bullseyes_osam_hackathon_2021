@@ -1,0 +1,17 @@
+
+.Video {
+width: "100vh";
+height: "100vh";
+position: absolute;
+/* left: 0;
+right: 0;
+bottom: 0;
+top: 0; */
+}
+.Videodiv {
+display: flex;
+justify-content: center;
+}
+.Canvas {
+position: absolute;
+}

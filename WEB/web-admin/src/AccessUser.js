@@ -16,6 +16,7 @@ import {
     TextInput,
     Show,
     SimpleShowLayout,
+    useListContext,
     required,
     CardActions,
     CreateButton,
@@ -26,6 +27,7 @@ import {
 } from 'react-admin';
 import { CardHeader,  Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
+// import FaceVideo from "./faceRecognition";
 import './App.css';
 import { Route } from 'react-router';
 import compose from 'recompose/compose';
@@ -60,6 +62,7 @@ const FilterSidebar = () => (
       </CardContent>
   </Card>
 );
+
 const ListActions = ({ basePath }) => (
   <CardActions>
     <CreateButton basePath={basePath} />
