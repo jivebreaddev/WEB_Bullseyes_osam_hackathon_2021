@@ -80,10 +80,11 @@ const ImageDetection = () => {
       setInterval(async () => {
         if (initialized) {
           setInitialized(false);
+          canvasRef.current.innerHTML = faceApi.createCanvasFromMedia(
+            videoRef.current
+          );
         }
-        canvasRef.current.innerHTML = faceApi.createCanvasFromMedia(
-          videoRef.current
-        );
+        
         faceApi.matchDimensions(canvasRef.current, videoSize);
   
         const detections = await faceApi.detectAllFaces(videoRef.current, option);

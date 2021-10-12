@@ -47,6 +47,7 @@ const ImageDetection = () => {
         );
         setInitialized(true);
         setDate(new Date());
+        
       };
       models();
     }, []);
@@ -86,6 +87,7 @@ const ImageDetection = () => {
     };
     const VideoPlay = () => {
       setInterval(async () => {
+        try{
         if (initialized) {
           setInitialized(false);
           canvasRef.current.innerHTML = faceApi.createCanvasFromMedia(
@@ -113,6 +115,10 @@ const ImageDetection = () => {
         };
         const drawBox = new faceApi.draw.DrawBox(box, drawOptions);
         drawBox.draw(canvasRef.current);
+      }
+      catch (err){
+
+      }
       }, 5000);
     };
     // styling to css file? or other methods
