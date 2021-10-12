@@ -11,6 +11,8 @@ import UserStatistics from "./ImageRecognition";
 import VideoRecognition from "./VideoRecognition";
 import myDataProvider from "./myDataProvider";
 import ImageRecognition from "./ImageRecognition";
+import MyLayout from "./MyLayout";
+import { theme } from "./theme";
 const dataProvider1 = myDataProvider
 const App = () => (
 
@@ -18,6 +20,8 @@ const App = () => (
     dashboard={Dashboard}
     authProvider={authProvider}
     dataProvider={dataProvider1}
+    layout={MyLayout}
+    theme={theme}
   >
 
     <Resource
