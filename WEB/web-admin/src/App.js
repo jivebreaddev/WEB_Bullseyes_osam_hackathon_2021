@@ -7,9 +7,10 @@ import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
-import UserStatistics from "./UserStatistics";
-import faceRecognition from "./faceRecognition";
+import UserStatistics from "./ImageRecognition";
+import VideoRecognition from "./VideoRecognition";
 import myDataProvider from "./myDataProvider";
+import ImageRecognition from "./ImageRecognition";
 const dataProvider1 = myDataProvider
 const App = () => (
 
@@ -26,15 +27,20 @@ const App = () => (
     />
     <Resource
       name="accessusers"
-      list={AccessUser} show={AccessUserShow} icon={AccessUserIcon}
+      list={AccessUser} create={AccessUserCreate} show={AccessUserShow} icon={AccessUserIcon}
       options={{ label: "출입한 사용자" }}
     />
     <Resource
-      name="statistics"
-      list={UserStatistics}
-      options={{ label: "통계" }}
+      name="VideoRecognition"
+      list={VideoRecognition}
+      options={{ label: "스트리밍" }}
     />
 
+    <Resource
+      name="ImageRecogition"
+      list={UserStatistics}
+      options={{ label: "비디오스트리밍" }}
+    />
   </Admin>
 );
 

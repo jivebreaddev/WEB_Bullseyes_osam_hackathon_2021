@@ -12,13 +12,21 @@ import * as faceApi from "face-api.js";
 import { useMutation } from "react-admin";
 import { startOfYesterday } from "date-fns";
 import axios from 'axios';
-// import '@tensorflow/tfjs-node';
 import "./styles.css";
-//const [refetch] = useListContext()
-//useeffect(refetch,[some value that ])
-//setInterval(() => alert('째깍'), 10000);
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import { makeStyles } from '@material-ui/core/styles';
 const ImageDetection = () => {
-  
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
   const [date, setDate] = useState();
   
     const displayWidth = 450;
@@ -39,6 +47,7 @@ const ImageDetection = () => {
         );
         setInitialized(true);
         setDate(new Date());
+        
       };
       models();
     }, []);
@@ -78,6 +87,7 @@ const ImageDetection = () => {
     };
     const VideoPlay = () => {
       setInterval(async () => {
+        try{
         if (initialized) {
           setInitialized(false);
           canvasRef.current.innerHTML = faceApi.createCanvasFromMedia(
@@ -97,7 +107,7 @@ const ImageDetection = () => {
           .getContext("2d")
           .clearRect(0, 0, displayWidth, displayHeight);
         faceApi.draw.drawDetections(canvasRef.current, resizedDectect);
-        const box = { x: 161, y: 180, width: 128, height: 128 };
+        const box = { x: 120, y: 100, width: 200, height: 200};
         
         const drawOptions = {
           label: "Put Your Face Here",
@@ -105,28 +115,32 @@ const ImageDetection = () => {
         };
         const drawBox = new faceApi.draw.DrawBox(box, drawOptions);
         drawBox.draw(canvasRef.current);
+      }
+      catch (err){
+
+      }
       }, 5000);
     };
     // styling to css file? or other methods
     return (
       <div>
         <h1>Hello</h1>
+        <Grid container spacing={2}>
+        <Grid item xs={8}>
+        
         <div className="Videodiv">
-        {/* <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} src="media/example.mp4" /> */}
-
-          <video
-            className="Video"
-            height={displayWidth}
-            width={displayWidth}
-            ref={videoRef}
-            autoPlay
-            muted
-            onPlay={VideoPlay}
-          />
-          <canvas className="Canvas" ref={canvasRef} />
+        <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/Useforvideo.mp4" />
+        <canvas className="Canvas" ref={canvasRef} />
         </div>
-        <br></br>
+        
+        </Grid>
+        <Grid item xs={4}>
         <img className="Canvas" src={pic} />
+        </Grid>
+        </Grid>
+        
+        <br></br>
+        
       </div>
     );
 
