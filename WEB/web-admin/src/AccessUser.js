@@ -69,37 +69,12 @@ const ListActions = ({ basePath }) => (
   </CardActions>
 );
 
-const ShowList = (props) =>{
-  const [trial,setTrial] = useState(false);
-  const {refetch}=useListContext();
-  useEffect(() => {
-    
-    setTrial(false);
-  },[trial]);
-  
-// refetch();
-const toChange = () =>{
-  setTrial(False)
-}
+export const ShowList = () =>{
   return(
     <Fragment>
-    <div className="table">
-    <List aside={<FilterSidebar />} {...props} >
-        <Datagrid rowClick="show">
-          <TextField label="순번" source="id" />
-          <ImageField label="사진"source="photourl" />
-          <DateField label="출입시간"source="time" showTime />
-          <TextField label="계급" source="rank" />
-          <TextField label="이름" source="name" />
-          <TextField label="군번" source="altid" />
-          <TextField label="소속" source="company" />
-          <EditButton />
-        </Datagrid>
-    </List>
-    </div>
     <div>
     <Card className="face">
-        <memo><ImageDetection toChange={toChange}></ImageDetection></memo>
+        <ImageDetection/>
     </Card>
     </div>
     </Fragment>
@@ -111,7 +86,20 @@ class AccessUserList extends React.Component {
     const { push, classes, ...props} = this.props;
     return (
       <div className="access">
-        <ShowList {...props}></ShowList>
+        <div className="table">
+        <List aside={<FilterSidebar />} {...props} >
+            <Datagrid rowClick="show">
+              <TextField label="순번" source="id" />
+              <ImageField label="사진"source="photourl" />
+              <DateField label="출입시간"source="time" showTime />
+              <TextField label="계급" source="rank" />
+              <TextField label="이름" source="name" />
+              <TextField label="군번" source="altid" />
+              <TextField label="소속" source="company" />
+              <EditButton />
+            </Datagrid>
+        </List>
+        </div>
         <Route path="/accessusers/create">
                 {({match}) => (
                   <Drawer open={!!match} anchor="left" onClose={this.handleClose}>
