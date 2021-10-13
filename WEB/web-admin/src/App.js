@@ -13,39 +13,42 @@ import myDataProvider from "./myDataProvider";
 import ImageRecognition from "./ImageRecognition";
 import MyLayout from "./MyLayout";
 import { theme } from "./theme";
+import './App.css';
+
 const dataProvider1 = myDataProvider
-const App = () => (
+const App = () => {
+  return (
+    <Admin
+      authProvider={authProvider}
+      dataProvider={dataProvider1}
+      layout={MyLayout}
+      theme={theme}
+    >
+      <Resource name="Dashboard" list={Dashboard} />
 
-  <Admin
-    dashboard={Dashboard}
-    authProvider={authProvider}
-    dataProvider={dataProvider1}
-    layout={MyLayout}
-    theme={theme}
-  >
+      <Resource
+        name="users"
+        list={UserList} create={UserCreate} edit={UserEdit} show={UserShow} icon={UserIcon}
+        options={{ label: "사용자" }}
+      />
+      <Resource
+        name="accessusers"
+        list={AccessUser} create={AccessUserCreate} show={AccessUserShow} icon={AccessUserIcon}
+        options={{ label: "출입한 사용자" }}
+      />
+      <Resource
+        name="VideoRecognition"
+        list={VideoRecognition}
+        options={{ label: "스트리밍" }}
+      />
 
-    <Resource
-      name="users"
-      list={UserList} create={UserCreate} edit={UserEdit} show={UserShow} icon={UserIcon}
-      options={{ label: "사용자" }}
-    />
-    <Resource
-      name="accessusers"
-      list={AccessUser} create={AccessUserCreate} show={AccessUserShow} icon={AccessUserIcon}
-      options={{ label: "출입한 사용자" }}
-    />
-    <Resource
-      name="VideoRecognition"
-      list={VideoRecognition}
-      options={{ label: "스트리밍" }}
-    />
-
-    <Resource
-      name="ImageRecogition"
-      list={UserStatistics}
-      options={{ label: "비디오스트리밍" }}
-    />
-  </Admin>
-);
+      <Resource
+        name="ImageRecogition"
+        list={UserStatistics}
+        options={{ label: "비디오스트리밍" }}
+      />
+    </Admin>
+  );
+};
 
 export default App;

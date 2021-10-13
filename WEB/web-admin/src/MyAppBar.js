@@ -1,14 +1,93 @@
-import * as React from 'react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import AppBarLogo from './image/AppBarLogo.svg'
 
-const MyAppBar = props => (
-    <AppBar {...props}>
-        <Toolbar>
-            <Typography variant="h6" id="react-admin-title" />
-        </Toolbar>
+const useStyles = makeStyles((theme) => ({
+  customizeToolbar: {
+    height: "45px",
+  },
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  mg: {
+    'margin-bottom': "20px",
+  },
+  logo: {
+    
+  },
+}));
+
+export default function MenuAppBar() {
+  const classes = useStyles();
+  const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleChange = (event) => {
+    setAuth(event.target.checked);
+  };
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div className={classes.root}>
+      <AppBar elevation={0} position="fixed" className={classes.customizeToolbar}>
+        <Toolbar className={classes.title}>
+            <img src={AppBarLogo} className={classes.mg} />
+            {auth && (
+                <div>
+                <IconButton
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleMenu}
+                    color="inherit"
+                    className={classes.mg}
+                >
+                <AccountCircle />
+                </IconButton>
+                <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                    }}
+                    open={open}
+                    onClose={handleClose}
+                >
+                <MenuItem onClick={handleClose}>logout</MenuItem>
+                </Menu>
+                </div>
+            )}
+    </Toolbar>
     </AppBar>
-);
-
-export default MyAppBar;
+    </div>
+  );
+}
