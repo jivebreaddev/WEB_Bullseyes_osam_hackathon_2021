@@ -16,23 +16,34 @@ import {
   Show,
   SimpleShowLayout
 } from "react-admin";
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  actions: {
+      backgroundColor: '#FFFFFF',
+  },
+});
+
 const userFilters = [
   <TextInput label="Search" source="q" alwaysOn />
 ];
 
-export const UserList = (props) => (
-  <List filters={userFilters} {...props}>
-    <Datagrid rowClick="show">
-      <TextField label="순번" source="id" />
-      <ImageField  label="사진" source="photourl" />
-      <TextField label="계급" source="rank" />
-      <TextField label="이름" source="name" />
-      <TextField label="군번" source="altid" />
-      <TextField label="소속" source="company" />
-      <EditButton />
-    </Datagrid>
-  </List>
-);
+export const UserList = (props) => {
+  const classes = useStyles(props);
+  return(
+    <List filters={userFilters} {...props} >
+      <Datagrid rowClick="show">
+        <TextField label="순번" source="id" />
+        <ImageField  label="사진" source="photourl" />
+        <TextField label="계급" source="rank" />
+        <TextField label="이름" source="name" />
+        <TextField label="군번" source="altid" />
+        <TextField label="소속" source="company" />
+        <EditButton />
+      </Datagrid>
+    </List>
+    );
+};
 
 export const UserEdit = (props) => (
   <Edit {...props}>

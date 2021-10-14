@@ -16,6 +16,7 @@ import AppBarLogo from './image/AppBarLogo.svg'
 const useStyles = makeStyles((theme) => ({
   customizeToolbar: {
     height: "45px",
+    background: "#FFFFFF",
   },
   root: {
     flexGrow: 1,
@@ -24,11 +25,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  mg: {
+  logo: {
     'margin-bottom': "20px",
   },
-  logo: {
-    
+  profile: {
+    'margin-bottom': "20px",
+    color: "#131523",
   },
 }));
 
@@ -54,7 +56,7 @@ export default function MenuAppBar() {
     <div className={classes.root}>
       <AppBar elevation={0} position="fixed" className={classes.customizeToolbar}>
         <Toolbar className={classes.title}>
-            <img src={AppBarLogo} className={classes.mg} />
+            <img src={AppBarLogo} className={classes.logo} />
             {auth && (
                 <div>
                 <IconButton
@@ -63,7 +65,7 @@ export default function MenuAppBar() {
                     aria-haspopup="true"
                     onClick={handleMenu}
                     color="inherit"
-                    className={classes.mg}
+                    className={classes.profile}
                 >
                 <AccountCircle />
                 </IconButton>
