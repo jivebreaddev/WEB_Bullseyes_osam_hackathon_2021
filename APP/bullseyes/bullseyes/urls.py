@@ -29,6 +29,7 @@ router.register(r'accessusers', views.AccessViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+   # path('accessusers/create', views.accessuser_edit)
     # path('users/', views.user_list),
     # path('users/<int:pk>', views.user_edit),
     # path('accessusers/', views.accessuser_list),

@@ -10,19 +10,47 @@ from . import filters
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
+from PIL import Image
+from io import BytesIO
+import base64
+import re
+
 class AccessUserViewSet(mixins.ListModelMixin,
                                 mixins.RetrieveModelMixin,
                                 mixins.DestroyModelMixin,
                                 viewsets.GenericViewSet):
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response({'data':serializer.data})
     def create(self, request, *args, **kwargs):
         print(request.data)
-        serializer = self.get_serializer(data=request.data)
+        data= {
+            'id': 3,
+            'photourl':request.data['photourl'],
+            'place': "중요한 기관",
+            'time': request.data['time'],
+            'rank':"he",
+            'name':"he",
+            'altid':"he",
+            'company':"he",
+        }
+        serializer = self.get_serializer(data=data)
         serializer.is_valid(raise_exception=True)
+        image_data = re.sub('^data:image/.+;base64,', '', serializer.initial_data['photourl'])
+        im = Image.open(BytesIO(base64.b64decode(image_data)))
+        
         ###serializer.initial_data['photourl'] can be accessed
         # modify them using 
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response({'data':serializer.data}, status=status.HTTP_201_CREATED, headers=headers)
     # modify these taking in rank, name, other recognition
     def perform_create(self, serializer):
         serializer.save()
@@ -39,8 +67,6 @@ class AccessUserViewSet(mixins.ListModelMixin,
         instance = self.get_object()
         # instance -> to model
         #try printit
-        
-        
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
@@ -50,7 +76,7 @@ class AccessUserViewSet(mixins.ListModelMixin,
             # forcibly invalidate the prefetch cache on the instance.
             instance._prefetched_objects_cache = {}
 
-        return Response(serializer.data)
+        return Response({'data':serializer.data})
 
     def perform_update(self, serializer):
         serializer.save()
@@ -62,7 +88,6 @@ class UserViewSet(AccessUserViewSet):
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     filterset_class = filters.UserFilter
-    search_fields = ["name"]
     permission_classes = [permissions.AllowAny]
     parser_classes = [JSONParser, MultiPartParser, FormParser]
 
@@ -72,7 +97,6 @@ class AccessViewSet(AccessUserViewSet):
     serializer_class = AccessUserSerializer
     filterset_class = filters.AccessUserFilter
     permission_classes = [permissions.AllowAny]
-    search_fields = ["name"]
     parser_classes = [JSONParser, MultiPartParser, FormParser]
 # @api_view(['POST','GET'])
 # @parser_classes([MultiPartParser,FormParser])
