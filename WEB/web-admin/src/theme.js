@@ -13,19 +13,43 @@ const rawTheme = {
       },
       RaList: {
         root: {
-          backgroundColor: '#FFFFFF',
+          backgroundColor: "#FFFFFF",
+          
         },
         actions: {
+          
         },
         main: {
           width: "95%",
           margin: "auto",
+          
         },
         content: {
+          boxShadow: 'none',
+          
         },
         bulkActionsDisplayed: {
+          
         },
       },
+      RaDatagrid: {
+        headerCell: {
+            backgroundColor: '#F5F6FA',
+            fontWeight: "bold",
+        },
+        tbody: {
+          
+        },
+        rowOdd: {
+          borderStyle: "solid",
+          borderColor: "#FFFFFF",
+          
+        },
+        rowEven: {
+          borderStyle: "solid",
+          borderColor: "#FFFFFF",
+        },
+      }
     }
   };
 
