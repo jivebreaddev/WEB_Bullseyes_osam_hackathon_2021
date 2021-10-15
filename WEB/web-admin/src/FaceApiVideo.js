@@ -16,19 +16,22 @@ import "./styles.css";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
+
 const ImageDetection = () => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-    },
-  }));
+  const classes = useStyles();
+
   const [date, setDate] = useState();
-  
     const displayWidth = 450;
     const displayHeight = 360;
     const [pic, setPic] = useState();
@@ -63,7 +66,7 @@ const ImageDetection = () => {
           setDate(new Date());
           axios({
             method: 'post',
-            url: 'https://osamhack2021-ai-web-bullseyes-bullseyes-pjw6w945935xx-8000.githubpreview.dev/accessusers/',
+            url: 'https://osamhack2021-ai-web-bullseyes-bullseyes-7v55qqw5xfxv6w-8000.githubpreview.dev/accessusers/',
             data: {
               photourl: canvas.toDataURL('image/jpeg', 1), time: date.toISOString()
             }

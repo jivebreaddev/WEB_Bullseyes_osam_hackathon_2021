@@ -11,3 +11,16 @@
   width: 600px;
   height: 800px;
 }
+
+.menu {
+  height: 94vh;
+  width: 230px;
+  border-radius: 0px;
+  background: #FFFFFF;
+}
+
+.test {
+  background: #FFFFFF;
+  width: 100vh;
+  height: 100vh;
+}

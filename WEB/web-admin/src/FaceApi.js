@@ -110,7 +110,6 @@ const ImageDetection = () => {
     // styling to css file? or other methods
     return (
       <div>
-        <h1>Hello</h1>
         <div className="Videodiv">
         {/* <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} src="media/example.mp4" /> */}
 

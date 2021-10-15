@@ -36,6 +36,7 @@ import { push } from "react-router-redux";
 import Button from '@material-ui/core/Button';
 import { mergeClasses } from "@material-ui/styles";
 import ImageDetection from "./FaceApi";
+
 const styles = {
   drawerContent: {
     width: 300
@@ -91,11 +92,11 @@ class AccessUserList extends React.Component {
             <Datagrid rowClick="show">
               <TextField label="순번" source="id" />
               <ImageField label="사진"source="photourl" />
-              <DateField label="출입시간"source="time" showTime />
+              <TextField label="소속" source="company" />
+              <TextField label="군번" source="altid" />
               <TextField label="계급" source="rank" />
               <TextField label="이름" source="name" />
-              <TextField label="군번" source="altid" />
-              <TextField label="소속" source="company" />
+              <DateField label="출입시간"source="time" showTime />
               <EditButton />
             </Datagrid>
         </List>
@@ -159,11 +160,11 @@ export const AccessUserCreate = ({ onCancel, ...props }) => (
       <FileInput label="사진" source="photourl" >
         <FileField source="src" title="title"/>  
       </FileInput>
-      <DateTimeInput label="출입시간"source="time" showTime />
+      <TextInput label="소속" source="company" />
+      <TextInput label="군번" source="altid" />
       <TextInput label="계급" source="rank" />
       <TextInput label="이름" source="name" />
-      <TextInput label="군번" source="altid" />
-      <TextInput label="소속" source="company" />
+      <DateTimeInput label="출입시간"source="time" showTime />
     </SimpleForm>
   </Create>
 );
@@ -171,15 +172,15 @@ export const AccessUserCreate = ({ onCancel, ...props }) => (
   export const AccessUserEdit = (props) => (
     <Edit {...props}>
       <SimpleForm>
-      <TextInput label="순번" source="id" />
-      <FileInput label="사진" source="photourl" >
-        <FileField source="src" title="title"/>  
-      </FileInput>
-        <DateField label="출입시간"source="time" />
+        <TextInput label="순번" source="id" />
+        <FileInput label="사진" source="photourl" >
+          <FileField source="src" title="title"/>  
+        </FileInput>
+        <TextInput label="소속" source="company" />
+        <TextInput label="군번" source="altid" />
         <TextInput label="계급" source="rank" />
         <TextInput label="이름" source="name" />
-        <TextInput label="군번" source="altid" />
-        <TextInput label="소속" source="company" />
+        <DateField label="출입시간"source="time" />
       </SimpleForm>
     </Edit>
   );
@@ -189,11 +190,11 @@ export const AccessUserCreate = ({ onCancel, ...props }) => (
       <SimpleShowLayout>
         <TextField label="순번" source="id" />
         <ImageField label="사진"source="photourl" />
-        <DateField label="출입시간"source="time" showTime/>
+        <TextField label="소속" source="company"/>
+        <TextField label="군번" source="altid"/>
         <TextField label="계급" source="rank"/>
         <TextField label="이름" source="name" />
-        <TextField label="군번" source="altid"/>
-        <TextField label="소속" source="company"/>
+        <DateField label="출입시간"source="time" showTime/>
       </SimpleShowLayout>
     </Show>
   );

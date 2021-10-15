@@ -11,7 +11,17 @@ top: 0; */
 .Videodiv {
 display: flex;
 justify-content: center;
+border-style: solid;
 }
 .Canvas {
 position: absolute;
+border-style: dotted;
+}
+
+.main {
+    height: 90vh;
+    width: 150vh;
+    border-radius: 0px;
+
+    background: #FFFFFF;
 }
