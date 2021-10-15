@@ -59,6 +59,7 @@ const App = () => {
       options={{ label: "스트리밍데모-3" }}
     />
   </Admin>
-);
+  );
+};
 
 export default App;
