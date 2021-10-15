@@ -7,7 +7,7 @@ const dataProvider = drfProvider(INITIAL);
 const myDataProvider = {
     ...dataProvider,
     create: (resource, params) => {
-        
+
         if (!params.data.photourl) {
             // fallback to the default implementation
             return dataProvider.create(resource, params);
@@ -21,7 +21,7 @@ const myDataProvider = {
         const newPictures = pictures.filter(
             p => p.rawFile instanceof File
         );
-    
+
         return Promise.all(newPictures.map(convertFileToBase64))
             .then(base64Pictures =>
                 base64Pictures.map(picture64 => (dataProvider.create(resource, {
@@ -32,9 +32,9 @@ const myDataProvider = {
                     },
                 })))
             )
-    },  
+    },
     update: (resource, params) => {
-        
+
         if (!params.data.photourl) {
             // fallback to the default implementation
             return dataProvider.update(resource, params);
@@ -48,7 +48,7 @@ const myDataProvider = {
         const newPictures = pictures.filter(
             p => p.rawFile instanceof File
         );
-    
+
         return Promise.all(newPictures.map(convertFileToBase64))
             .then(base64Pictures =>
                 base64Pictures.map(picture64 => (dataProvider.update(resource, {
@@ -59,7 +59,7 @@ const myDataProvider = {
                     },
                 })))
             )
-    },   
+    },
 };
 
 const convertFileToBase64 = file =>

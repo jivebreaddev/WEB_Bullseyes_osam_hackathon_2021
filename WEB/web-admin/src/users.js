@@ -22,11 +22,11 @@ const userFilters = [
 ];
 
 export const UserList = (props) => {
-  return(
+  return (
     <List filters={userFilters} {...props}>
       <Datagrid rowClick="show">
         <TextField label="순번" source="id" />
-        <ImageField  label="사진" source="photourl" />
+        <ImageField label="사진" source="photourl" />
         <TextField label="소속" source="company" />
         <TextField label="군번" source="altid" />
         <TextField label="계급" source="rank" />
@@ -34,7 +34,7 @@ export const UserList = (props) => {
         <EditButton />
       </Datagrid>
     </List>
-    );
+  );
 };
 
 export const UserEdit = (props) => (
@@ -42,7 +42,7 @@ export const UserEdit = (props) => (
     <SimpleForm>
       <TextInput label="순번" source="id" />
       <ImageInput label="사진" source="photourl" accept="image/*">
-        <ImageField source="src" title="title" />  
+        <ImageField source="src" title="title" />
       </ImageInput>
       <TextInput label="소속" source="company" />
       <TextInput label="군번" source="altid" />
@@ -57,7 +57,7 @@ export const UserCreate = (props) => (
     <SimpleForm>
       <TextInput label="순번" source="id" />
       <FileInput label="사진" source="photourl">
-          <FileField source="src" title="title"/>  
+        <FileField source="src" title="title" />
       </FileInput>
       <TextInput label="소속" source="company" />
       <TextInput label="군번" source="altid" />
@@ -71,7 +71,7 @@ export const UserShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField label="순번" source="id" />
-      <ImageField  label="사진" source="photourl" />
+      <ImageField label="사진" source="photourl" />
       <TextField label="소속" source="company" />
       <TextField label="군번" source="altid" />
       <TextField label="계급" source="rank" />

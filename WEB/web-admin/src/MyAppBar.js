@@ -56,40 +56,40 @@ export default function MenuAppBar() {
     <div className={classes.root}>
       <AppBar elevation={0} position="fixed" className={classes.customizeToolbar}>
         <Toolbar className={classes.title}>
-            <img src={AppBarLogo} className={classes.logo} />
-            {auth && (
-                <div>
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="menu-appbar"
-                    aria-haspopup="true"
-                    onClick={handleMenu}
-                    color="inherit"
-                    className={classes.profile}
-                >
+          <img src={AppBarLogo} className={classes.logo} />
+          {auth && (
+            <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+                className={classes.profile}
+              >
                 <AccountCircle />
-                </IconButton>
-                <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    open={open}
-                    onClose={handleClose}
-                >
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open}
+                onClose={handleClose}
+              >
                 <MenuItem onClick={handleClose}>logout</MenuItem>
-                </Menu>
-                </div>
-            )}
-    </Toolbar>
-    </AppBar>
+              </Menu>
+            </div>
+          )}
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }

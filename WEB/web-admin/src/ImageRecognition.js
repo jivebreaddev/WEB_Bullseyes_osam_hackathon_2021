@@ -23,10 +23,10 @@ export default () => (
 export const UserStatistics = (props) => {
   const classes = useStyles();
   return (
-  <Card className={classes.main}>
-    <CardHeader title="Welcome to the administration" />
-    <ImageDetection></ImageDetection>
-  </Card>
+    <Card className={classes.main}>
+      <CardHeader title="Welcome to the administration" />
+      <ImageDetection></ImageDetection>
+    </Card>
   )
 };
 
@@ -40,8 +40,8 @@ export const ImageRecognition_2 = (props) => (
 
 
 export const UserStatistics = () => {
-  
-  return(
+
+  return (
     <Card >
       sd
     </Card>
