@@ -7,11 +7,9 @@ from django.utils import timezone
 
 class UserSerializer(serializers.ModelSerializer):
     photourl = Base64ImageField(required=False, use_url=True)
-    image_url = serializers.SerializerMethodField('get_photo_url')
-    
     class Meta:
         model = User
-        fields = ['id','photourl', 'rank', 'name', 'altid', 'company','image_url']
+        fields = ['id','photourl', 'rank', 'name', 'altid', 'company']
     def get_photo_url(self, obj):
         request = self.context.get('request')
         photo_url = obj.photourl.url

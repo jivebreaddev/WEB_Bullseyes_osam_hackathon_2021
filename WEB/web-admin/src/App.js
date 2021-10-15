@@ -10,7 +10,8 @@ import authProvider from "./authProvider";
 import UserStatistics from "./ImageRecognition";
 import VideoRecognition from "./VideoRecognition";
 import myDataProvider from "./myDataProvider";
-import ImageRecognition from "./ImageRecognition";
+import ImageRecognition from "./faceRecognitionDemo";
+import ImageRecognition_2 from "./ImageRecognition_2";
 const dataProvider1 = myDataProvider
 const App = () => (
 
@@ -40,6 +41,16 @@ const App = () => (
       name="ImageRecogition"
       list={UserStatistics}
       options={{ label: "비디오스트리밍" }}
+    />
+    <Resource
+      name="ImageRecogitionDemo"
+      list={ImageRecognition}
+      options={{ label: "스트리밍데모-2" }}
+    />
+    <Resource
+      name="ImageRecogitionDemo3"
+      list={ImageRecognition_2}
+      options={{ label: "스트리밍데모-3" }}
     />
   </Admin>
 );

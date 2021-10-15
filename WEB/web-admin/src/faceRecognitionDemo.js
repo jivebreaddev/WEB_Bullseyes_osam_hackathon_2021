@@ -16,7 +16,8 @@ import "./styles.css";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
-const ImageDetection = () => {
+import INITIAL from './myDataProvider';
+const ImageDetection2 = () => {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -129,7 +130,7 @@ const ImageDetection = () => {
         <Grid item xs={8}>
         
         <div className="Videodiv">
-        <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/Useforvideo.mp4" />
+        <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/srcback.mp4" />
         <canvas className="Canvas" ref={canvasRef} />
         </div>
         
@@ -146,4 +147,4 @@ const ImageDetection = () => {
 
 };
 
-export default ImageDetection;
+export default ImageDetection2;

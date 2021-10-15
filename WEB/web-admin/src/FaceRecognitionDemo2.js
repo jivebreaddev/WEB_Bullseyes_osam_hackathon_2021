@@ -7,16 +7,14 @@
 // }
 // export default FaceApi;
 import React, { useState, useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
 import * as faceApi from "face-api.js";
-import { useMutation } from "react-admin";
-import { startOfYesterday } from "date-fns";
 import axios from 'axios';
 import "./styles.css";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import { makeStyles } from '@material-ui/core/styles';
-const ImageDetection = () => {
+import INITIAL from './myDataProvider';
+const ImageDetection3 = () => {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -129,7 +127,7 @@ const ImageDetection = () => {
         <Grid item xs={8}>
         
         <div className="Videodiv">
-        <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/Useforvideo.mp4" />
+        <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/cropped.mp4" />
         <canvas className="Canvas" ref={canvasRef} />
         </div>
         
@@ -146,4 +144,4 @@ const ImageDetection = () => {
 
 };
 
-export default ImageDetection;
+export default ImageDetection3;

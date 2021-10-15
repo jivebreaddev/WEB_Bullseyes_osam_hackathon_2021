@@ -5,7 +5,7 @@ import ImageDetection3 from './FaceRecognitionDemo2';
 export default () => (
   <Card>
     <CardHeader title="Welcome to the administration" />
-    <ImageDetection></ImageDetection>
+    <ImageDetection3></ImageDetection3>
   </Card>
 );
 export const UserStatistics = (props) => (

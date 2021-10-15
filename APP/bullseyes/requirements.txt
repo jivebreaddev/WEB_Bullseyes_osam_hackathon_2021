@@ -6,7 +6,6 @@ djangorestframework==3.12.4
 importlib-metadata==4.8.1
 Markdown==3.3.4
 olefile==0.46
-Pillow==7.2.0
 pip==20.2.4
 psycopg2==2.8.6
 pytz==2020.1
@@ -16,3 +15,10 @@ wheel==0.35.1
 zipp==3.5.0
 django-cors-headers==3.9.0
 django-extra-fields==3.0.2
+fastimport==0.9.8
+idna==2.8
+numpy==1.21.2
+Pillow==8.3.2
+Pygments==2.3.1
+PyYAML==5.3.1
+facenet-pytorch==2.5.2
