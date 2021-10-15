@@ -11,16 +11,12 @@ class UserFilter(django_filters.FilterSet):
 
 class AccessUserFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(field_name="name", lookup_expr="contains")
-    time = django_filters.IsoDateTimeFilter()
+    time = django_filters.CharFilter(field_name="time", lookup_expr="contains")
     #rangedate = 
     class Meta:
         model = AccessUser
         fields ={
             'name': ['exact', 'contains'],
-            'time': ['exact', 'gte','lte','range'],
+            'time': ['exact','contains'],
         }
-        filter_overrides = {
-        models.DateTimeField: {
-            'filter_class': django_filters.IsoDateTimeFilter
-        }
-        }
+        

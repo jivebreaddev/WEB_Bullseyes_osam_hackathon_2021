@@ -7,31 +7,34 @@ import { FilterList, FilterListItem } from 'react-admin';
 import {
     startOfYesterday,
     endOfYesterday,
+    startOfToday,
+    endOfToday,
     startOfWeek,
     subWeeks
 } from 'date-fns';
+var date = new Date()
+var isoDateTime = new Date(endOfYesterday() - (date.getTimezoneOffset() * 60000)).toISOString();
 
 export const LastVisitedFilter = () => (
     <FilterList label="최근 날짜들" icon={<AccessTimeIcon />}>
         <FilterListItem
             label="오늘"
             value={{
-                time__gte: endOfYesterday().toISOString(),
-                time__lte: undefined,
+                time: new Date(startOfToday() - (date.getTimezoneOffset() * 60000)).toISOString().slice(0, 10),
+                time__contains: ""
             }}
         />
         <FilterListItem
             label="어제"
             value={{
-                time__gte: startOfYesterday(new Date()).toISOString(),
-                time__lte: undefined,
+                time: new Date(endOfYesterday() - (date.getTimezoneOffset() * 60000)).toISOString().slice(0, 10),
+                time__contains: ""
             }}
         />
         <FilterListItem
-            label="날짜 SEARCH TAB"
+            label="모두보이기"
             value={{
-                time__gte: subWeeks(startOfWeek(new Date()), 1).toISOString(),
-                time__lte: startOfWeek(new Date()).toISOString(),
+                time:"",
             }}
         />
     </FilterList>
@@ -44,15 +47,15 @@ export const HasOrderedFilter = () => (
         <FilterListItem
             label="신원확인된 인원"
             value={{
-                nb_commands_gte: 1,
-                nb_commands_lte: undefined,
+                name: "",
+                
             }}
         />
         <FilterListItem
             label="신원미상 인원"
             value={{
-                nb_commands_gte: undefined,
-                nb_commands_lte: 0,
+                name: "미확인 자",
+            
             }}
         />
     </FilterList>
