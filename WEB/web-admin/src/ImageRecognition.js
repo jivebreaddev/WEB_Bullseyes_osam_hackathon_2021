@@ -36,14 +36,3 @@ export const ImageRecognition_2 = (props) => (
     <ImageDetection3></ImageDetection3>
   </Card>
 );
-
-
-
-export const UserStatistics = () => {
-  
-  return(
-    <Card >
-      sd
-    </Card>
-  );
-};
