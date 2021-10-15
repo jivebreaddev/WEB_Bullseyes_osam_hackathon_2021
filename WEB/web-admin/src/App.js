@@ -43,22 +43,22 @@ const App = () => {
         options={{ label: "스트리밍" }}
       />
 
-    <Resource
-      name="ImageRecogition"
-      list={UserStatistics}
-      options={{ label: "비디오스트리밍" }}
-    />
-    <Resource
-      name="ImageRecogitionDemo"
-      list={ImageRecognition}
-      options={{ label: "스트리밍데모-2" }}
-    />
-    <Resource
-      name="ImageRecogitionDemo3"
-      list={ImageRecognition_2}
-      options={{ label: "스트리밍데모-3" }}
-    />
-  </Admin>
+      <Resource
+        name="ImageRecogition"
+        list={UserStatistics}
+        options={{ label: "비디오스트리밍" }}
+      />
+      <Resource
+        name="ImageRecogitionDemo"
+        list={ImageRecognition}
+        options={{ label: "스트리밍데모-2" }}
+      />
+      <Resource
+        name="ImageRecogitionDemo3"
+        list={ImageRecognition_2}
+        options={{ label: "스트리밍데모-3" }}
+      />
+    </Admin>
   );
 };
 

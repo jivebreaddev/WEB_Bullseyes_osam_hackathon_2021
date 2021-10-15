@@ -34,22 +34,22 @@ const MyMenu = ({ onMenuClick, logout }) => {
   const resources = useSelector(getResources);
   const classes = useStyles();
   return (
-      <div className="menu">
-        {resources.map((resource) => (
-            <MenuItemLink
-              className={classes.root}
-              key={resource.name}
-              to={`/${resource.name}`}
-              primaryText={
-                (resource.options && resource.options.label) || resource.name
-              }
-              leftIcon={resource.icon ? <resource.icon /> : <DefaultIcon />}
-              onClick={onMenuClick}
-              sidebarIsOpen={open}
-            />
-        ))}
-        {isXSmall && logout}
-      </div>
+    <div className="menu">
+      {resources.map((resource) => (
+        <MenuItemLink
+          className={classes.root}
+          key={resource.name}
+          to={`/${resource.name}`}
+          primaryText={
+            (resource.options && resource.options.label) || resource.name
+          }
+          leftIcon={resource.icon ? <resource.icon /> : <DefaultIcon />}
+          onClick={onMenuClick}
+          sidebarIsOpen={open}
+        />
+      ))}
+      {isXSmall && logout}
+    </div>
   );
 };
 

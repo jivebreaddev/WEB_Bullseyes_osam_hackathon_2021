@@ -34,7 +34,7 @@ export const LastVisitedFilter = () => (
         <FilterListItem
             label="모두보이기"
             value={{
-                time:"",
+                time: "",
             }}
         />
     </FilterList>
@@ -48,14 +48,14 @@ export const HasOrderedFilter = () => (
             label="신원확인된 인원"
             value={{
                 name: "",
-                
+
             }}
         />
         <FilterListItem
             label="신원미상 인원"
             value={{
                 name: "미확인 자",
-            
+
             }}
         />
     </FilterList>

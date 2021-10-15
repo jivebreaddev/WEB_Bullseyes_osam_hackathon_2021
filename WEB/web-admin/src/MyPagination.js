@@ -8,19 +8,19 @@ export const ListPagination = () => {
     const nbPages = Math.ceil(total / perPage) || 1;
     return (
         nbPages > 1 &&
-            <Toolbar>
-                {page > 1 &&
-                    <Button color="primary" key="prev" onClick={() => setPage(page - 1)}>
-                        <ChevronLeft />
-                        Prev
-                    </Button>
-                }
-                {page !== nbPages &&
-                    <Button color="primary" key="next" onClick={() => setPage(page + 1)}>
-                        Next
-                        <ChevronRight />
-                    </Button>
-                }
-            </Toolbar>
+        <Toolbar>
+            {page > 1 &&
+                <Button color="primary" key="prev" onClick={() => setPage(page - 1)}>
+                    <ChevronLeft />
+                    Prev
+                </Button>
+            }
+            {page !== nbPages &&
+                <Button color="primary" key="next" onClick={() => setPage(page + 1)}>
+                    Next
+                    <ChevronRight />
+                </Button>
+            }
+        </Toolbar>
     );
 }
