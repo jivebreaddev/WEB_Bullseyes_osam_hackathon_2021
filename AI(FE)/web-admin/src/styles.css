@@ -3,6 +3,8 @@
 width: "100vh";
 height: "100vh";
 position: absolute;
+left: 40vh;
+top: 40vh;
 /* left: 0;
 right: 0;
 bottom: 0;
@@ -10,12 +12,16 @@ top: 0; */
 }
 .Videodiv {
 display: flex;
-justify-content: center;
-border-style: solid;
 }
 .Canvas {
 position: absolute;
-border-style: dotted;
+left: 40vh;
+top: 40vh;
+}
+.Picture {
+position: relative;
+border: solid;
+top: 35vh;
 }
 
 .main {

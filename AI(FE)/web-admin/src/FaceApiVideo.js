@@ -121,7 +121,6 @@ const VideoDetection = (prop) => {
   // styling to css file? or other methods
   return (
     <div>
-      <h1>Hello</h1>
       <Grid container spacing={2}>
         <Grid item xs={8}>
 
@@ -132,7 +131,7 @@ const VideoDetection = (prop) => {
 
         </Grid>
         <Grid item xs={4}>
-          <img className="Canvas" src={pic} />
+          <img className="Picture" src={pic} />
           
         </Grid>
       </Grid>
