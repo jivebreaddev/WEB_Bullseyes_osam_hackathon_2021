@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as faceApi from "face-api.js";
 import axios from 'axios';
-
+import InitialPosting from './myDataProvider';
 import "./styles.css";
 
 const ImageDetection = () => {
@@ -42,11 +42,13 @@ const ImageDetection = () => {
         setDate(new Date());
         axios({
           method: 'post',
-          url: 'https://osamhack2021-ai-web-bullseyes-bullseyes-pjw6w945935xx-8000.githubpreview.dev/accessusers/',
+          url: InitialPosting,
           data: {
             photourl: canvas.toDataURL(), time: date.toISOString()
           }
-        });
+        }).then(function (response) {
+          console.log(response.data);
+        });;
       });
 
 

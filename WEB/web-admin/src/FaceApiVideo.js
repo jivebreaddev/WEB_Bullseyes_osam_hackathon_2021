@@ -1,16 +1,7 @@
-// import * as faceApi from "face-api.js";
-// import React, { useState, useEffect } from 'react';
-
-// class FaceApi extends React.Component {
-
-
-// }
-// export default FaceApi;
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import * as faceApi from "face-api.js";
-import { useMutation } from "react-admin";
-import { startOfYesterday } from "date-fns";
+import InitialPosting from './myDataProvider';
 import axios from 'axios';
 import "./styles.css";
 import Grid from '@material-ui/core/Grid';
@@ -66,11 +57,13 @@ const VideoDetection = (prop) => {
         setDate(new Date());
         axios({
           method: 'post',
-          url: 'https://osamhack2021-ai-web-bullseyes-bullseyes-7v55qqw5xfxv6w-8000.githubpreview.dev/accessusers/',
+          url: InitialPosting,
           data: {
             photourl: canvas.toDataURL('image/jpeg', 1), time: date.toISOString()
           }
-        });
+        }).then(function (response) {
+          console.log(response.data);
+        });;
       });
 
 
