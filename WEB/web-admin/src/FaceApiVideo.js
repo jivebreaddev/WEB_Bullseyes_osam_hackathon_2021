@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ImageDetection = (prop) => {
+const VideoDetection = (prop) => {
   const classes = useStyles();
 
   const [date, setDate] = useState();
@@ -149,4 +149,4 @@ const ImageDetection = (prop) => {
 
 };
 
-export default ImageDetection;
+export default VideoDetection;

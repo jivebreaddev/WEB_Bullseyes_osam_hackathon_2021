@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import { UserList, UserEdit, UserCreate, UserShow } from "./users";
-import { AccessUserEdit, AccessUserCreate, AccessUserShow } from "./AccessUser";
+import { AccessUserCreate, AccessUserShow } from "./AccessUser";
 import AccessUser from "./AccessUser";
 import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";

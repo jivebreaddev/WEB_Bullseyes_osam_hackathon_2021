@@ -26,7 +26,7 @@ device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 mtcnn = MTCNN(image_size=128,margin=0)
 # img_image2 = mtcnn(img2,save_path='single_image.jpg')
 # img_embedding2 = facenet(img_image2.unsqueeze(0))
-checkpoint = torch.load('/APP/media/InceptionResNetV1_ArcFace.pt')
+checkpoint = torch.load('/APP/InceptionResNetV1_ArcFace.pt')
 facenet = checkpoint.model
 facenet.to(device)
 facenet.eval()

@@ -1,19 +1,14 @@
 import * as React from 'react';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOnOutlined';
-import MailIcon from '@material-ui/icons/MailOutline';
-import LocalOfferIcon from '@material-ui/icons/LocalOfferOutlined';
 import { FilterList, FilterListItem } from 'react-admin';
 import {
-    startOfYesterday,
+
     endOfYesterday,
     startOfToday,
-    endOfToday,
-    startOfWeek,
-    subWeeks
 } from 'date-fns';
 var date = new Date()
-var isoDateTime = new Date(endOfYesterday() - (date.getTimezoneOffset() * 60000)).toISOString();
+
 
 export const LastVisitedFilter = () => (
     <FilterList label="최근 날짜들" icon={<AccessTimeIcon />}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, memo, Fragment } from "react";
+import React, { Fragment } from "react";
 import {
   List,
   Datagrid,
@@ -6,18 +6,14 @@ import {
   ImageField,
   FileField,
   FileInput,
-  ImageInput,
   DateTimeInput,
   Edit,
   DateField,
   Create,
   SimpleForm,
-  SelectInput,
   TextInput,
   Show,
   SimpleShowLayout,
-  useListContext,
-  required,
   CardActions,
   CreateButton,
   translate,
@@ -25,7 +21,7 @@ import {
   SaveButton,
   EditButton,
 } from 'react-admin';
-import { CardHeader, Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
+import { Card as MuiCard, CardContent, Drawer, withStyles } from '@material-ui/core';
 import { LastVisitedFilter, HasOrderedFilter } from './sideFilter';
 // import FaceVideo from "./faceRecognition";
 import './App.css';
@@ -34,7 +30,6 @@ import compose from 'recompose/compose';
 import { connect } from "react-redux";
 import { push } from "react-router-redux";
 import Button from '@material-ui/core/Button';
-import { mergeClasses } from "@material-ui/styles";
 import ImageDetection from "./FaceApi";
 
 const styles = {

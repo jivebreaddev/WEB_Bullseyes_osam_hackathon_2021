@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Card, CardHeader } from "@material-ui/core";
 import ImageDetection from "./FaceApi";
-import ImageDetection from "./FaceApiVideo";
+import VideoDetection from "./FaceApiVideo";
 import { makeStyles } from '@material-ui/core/styles';
 import "./styles.css";
 
@@ -19,28 +19,37 @@ export const StreamingRecognition = (props) => {
   return (
     <Card className={classes.main}>
       <CardHeader title="Welcome to the administration" />
-      <ImageDetection src=""></ImageDetection>
+      <ImageDetection></ImageDetection>
     </Card>
   )
 };
 
-export const VideoDemoRecognition_1 = (props) => (
+export const VideoDemoRecognition_1 = (props) => {
+  const classes = useStyles();
+  return(
   <Card className={classes.main}>
       <CardHeader title="Welcome to the administration" />
-      <ImageDetection src="Useforvideo.mp4"></ImageDetection>
+      <VideoDetection src="Useforvideo.mp4"></VideoDetection>
     </Card>
-  )
-export const VideoDemoRecognition_2 = (props) => (
+    );
+  }
+export const VideoDemoRecognition_2 = (props) => {
+  const classes = useStyles();
+  return(
   <Card className={classes.main}>
       <CardHeader title="Welcome to the administration" />
-      <ImageDetection src="srcback.mp4"></ImageDetection>
+      <VideoDetection src="srcback.mp4"></VideoDetection>
     </Card>
-  )
-export const VideoDemoRecognition_3 = (props) => (
-  <Card className={classes.main}>
+    );
+  }
+export const VideoDemoRecognition_3 = (props) => {
+  const classes = useStyles();
+  return(
+ <Card className={classes.main}>
       <CardHeader title="Welcome to the administration" />
-      <ImageDetection src="cropped.mp4"></ImageDetection>
+      <VideoDetection src="cropped.mp4"></VideoDetection>
     </Card>
-  )
+    );
+}
 
 
