@@ -62,6 +62,7 @@ const VideoDetection = (prop) => {
             photourl: canvas.toDataURL('image/jpeg', 1), time: date.toISOString()
           }
         }).then(function (response) {
+          console.log(response.data);
           setIdentity(response.data);
         });
       });
@@ -132,6 +133,7 @@ const VideoDetection = (prop) => {
         </Grid>
         <Grid item xs={4}>
           <img className="Canvas" src={pic} />
+          
         </Grid>
       </Grid>
 
