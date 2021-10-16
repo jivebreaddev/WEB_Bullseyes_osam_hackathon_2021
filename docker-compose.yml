@@ -21,10 +21,10 @@ services:
     depends_on:
       - db
   front:
-    build: ./WEB/web-admin
+    build: ./AI(FE)/web-admin
     command: ["npm", "start"]
     volumes:
-      - ./WEB/web-admin:/WEB
+      - ./AI(FE)/web-admin:/WEB
     ports:
       - "3000:3000"
     

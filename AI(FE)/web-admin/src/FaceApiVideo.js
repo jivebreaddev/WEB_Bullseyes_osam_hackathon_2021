@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoDetection = (prop) => {
   const classes = useStyles();
-
+  const [identity, setIdentity] = useState("");
   const [date, setDate] = useState();
   const displayWidth = 450;
   const displayHeight = 360;
@@ -62,8 +62,8 @@ const VideoDetection = (prop) => {
             photourl: canvas.toDataURL('image/jpeg', 1), time: date.toISOString()
           }
         }).then(function (response) {
-          console.log(response.data);
-        });;
+          setIdentity(response.data);
+        });
       });
 
 

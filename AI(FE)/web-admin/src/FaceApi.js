@@ -8,7 +8,7 @@ import "./styles.css";
 const ImageDetection = () => {
 
   const [date, setDate] = useState();
-
+  const [identity, setIdentity] = useState("");
   const displayWidth = 450;
   const displayHeight = 360;
   const [pic, setPic] = useState();
@@ -47,8 +47,8 @@ const ImageDetection = () => {
             photourl: canvas.toDataURL(), time: date.toISOString()
           }
         }).then(function (response) {
-          console.log(response.data);
-        });;
+          setIdentity(response.data);
+        });
       });
 
 
