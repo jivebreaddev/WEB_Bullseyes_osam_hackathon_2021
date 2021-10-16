@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ImageDetection = () => {
+const ImageDetection = (prop) => {
   const classes = useStyles();
 
   const [date, setDate] = useState();
@@ -132,7 +132,7 @@ const ImageDetection = () => {
         <Grid item xs={8}>
 
           <div className="Videodiv">
-            <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src="/Useforvideo.mp4" />
+            <video ref={videoRef} autoPlay muted className="Video" onPlay={VideoPlay} loop src={prop.src} />
             <canvas className="Canvas" ref={canvasRef} />
           </div>
 

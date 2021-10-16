@@ -7,13 +7,11 @@ import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
-import { UserStatistics } from "./ImageRecognition";
-import { VideoRecognition } from "./VideoRecognition";
 import myDataProvider from "./myDataProvider";
-import ImageRecognition from "./faceRecognitionDemo";
-import ImageRecognition_2 from "./ImageRecognition_2";
 import MyLayout from "./MyLayout";
 import { theme } from "./theme";
+import {StreamingRecognition, VideoDemoRecognition_1,
+   VideoDemoRecognition_2, VideoDemoRecognition_3} from "./ImageRecognition";
 import './App.css';
 
 const dataProvider1 = myDataProvider
@@ -38,25 +36,25 @@ const App = () => {
         options={{ label: "출입한 사용자" }}
       />
       <Resource
-        name="VideoRecognition"
-        list={VideoRecognition}
-        options={{ label: "스트리밍" }}
+        name="StreamingRecognition"
+        list={StreamingRecognition}
+        options={{ label: "실시간신원확인" }}
       />
 
       <Resource
         name="ImageRecogition"
-        list={UserStatistics}
-        options={{ label: "비디오스트리밍" }}
+        list={VideoDemoRecognition_1}
+        options={{ label: "데모(박시창)" }}
       />
       <Resource
         name="ImageRecogitionDemo"
-        list={ImageRecognition}
-        options={{ label: "스트리밍데모-2" }}
+        list={VideoDemoRecognition_2}
+        options={{ label: "데모(이길동)" }}
       />
       <Resource
         name="ImageRecogitionDemo3"
-        list={ImageRecognition_2}
-        options={{ label: "스트리밍데모-3" }}
+        list={VideoDemoRecognition_3}
+        options={{ label: "데모(신원불명)" }}
       />
     </Admin>
   );

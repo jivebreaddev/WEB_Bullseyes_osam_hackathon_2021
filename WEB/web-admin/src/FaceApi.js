@@ -1,22 +1,10 @@
-// import * as faceApi from "face-api.js";
-// import React, { useState, useEffect } from 'react';
 
-// class FaceApi extends React.Component {
-
-
-// }
-// export default FaceApi;
 import React, { useState, useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
 import * as faceApi from "face-api.js";
-import { useMutation } from "react-admin";
-import { startOfYesterday } from "date-fns";
 import axios from 'axios';
-// import '@tensorflow/tfjs-node';
+
 import "./styles.css";
-//const [refetch] = useListContext()
-//useeffect(refetch,[some value that ])
-//setInterval(() => alert('째깍'), 10000);
+
 const ImageDetection = () => {
 
   const [date, setDate] = useState();

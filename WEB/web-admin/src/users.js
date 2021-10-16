@@ -12,7 +12,6 @@ import {
   Create,
   SimpleForm,
   TextInput,
-  DateField,
   Show,
   SimpleShowLayout
 } from "react-admin";
