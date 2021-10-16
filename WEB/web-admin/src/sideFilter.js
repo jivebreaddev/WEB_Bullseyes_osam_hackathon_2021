@@ -3,12 +3,11 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOnOutlined';
 import { FilterList, FilterListItem } from 'react-admin';
 import {
-
     endOfYesterday,
     startOfToday,
 } from 'date-fns';
-var date = new Date()
 
+var date = new Date()
 
 export const LastVisitedFilter = () => (
     <FilterList label="최근 날짜들" icon={<AccessTimeIcon />}>
