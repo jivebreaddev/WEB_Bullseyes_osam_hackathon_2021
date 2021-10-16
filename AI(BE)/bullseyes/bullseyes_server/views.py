@@ -31,7 +31,7 @@ facenet = checkpoint.model
 facenet.to(device)
 facenet.eval()
 db = {}
-with open('/APP/media/embeddings.p', 'rb') as f:
+with open('/APP/embeddings.p', 'rb') as f:
     db = pickle.load(f)
 def img_to_embedding(img, facenet):
     image_cropped = mtcnn(img,save_path='single_image.jpg')
