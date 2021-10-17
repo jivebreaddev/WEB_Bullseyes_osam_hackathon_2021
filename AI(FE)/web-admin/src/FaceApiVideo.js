@@ -5,19 +5,34 @@ import InitialPosting from './myDataProvider';
 import axios from 'axios';
 import "./styles.css";
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
+import { Card, CardContent, CardMedia, CardHeader } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+const useStyles = makeStyles({
+  video: {
+    position: "absolute",
+    right: "675px",
+    top: "200px",
+    width: "204px",
+    height: "202px",
   },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+  text: {
+    position: "absolute",
+    right: "600px",
+    top: "450px",
+    width: "354px",
+    height: "202px",
   },
-}));
+  picture: {
+    position: "absolute",
+    'border-radius': "30px",
+    border: "1px solid",
+    left: "24px",
+    top: "21px",
+    width: "156px",
+    height: "156px",
+  },
+});
 
 const VideoDetection = (prop) => {
   const classes = useStyles();
@@ -130,14 +145,34 @@ const VideoDetection = (prop) => {
           </div>
 
         </Grid>
-        <Grid item xs={4}>
-          <img className="Picture" src={pic} />
-          
-        </Grid>
+        <Card className={classes.video}>
+          <CardMedia
+            className={classes.picture}
+            component="img"
+            image={pic}
+          />
+        </Card>
+        <Card className={classes.text}>
+          {typeof(identity)=="string" ? "" :
+            <div className="fonts">
+              <p>
+                <div className="head">{identity.data.name}</div>
+                <div className="opacity">{identity.data.company}</div>
+                <div className="opacity">{identity.data.rank}</div>
+                <div className="opacity">{
+                  identity.data.time.substr(0,10)
+                  + " " +
+                  identity.data.time.substr(11,8)
+                }</div>
+                <div className="opacity">{identity.data.place}</div>
+                <div className="opacity">{identity.data.altid}</div>
+              </p>
+            </div>
+          }
+        </Card>
       </Grid>
-
-      <br></br>
-
+      <div className="title1">비디오</div>
+      <div className="title2">사용자 정보</div>
     </div>
   );
 

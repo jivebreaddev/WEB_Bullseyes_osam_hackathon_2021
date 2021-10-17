@@ -105,12 +105,16 @@ class AccessUserViewSet(mixins.ListModelMixin,
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
+            for a in serializer.data:
+                a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
+            
             return self.get_paginated_response(serializer.data)
-
         serializer = self.get_serializer(queryset, many=True)
+        for a in serializer.data:
+            a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
         return Response({'data':serializer.data})
     def create(self, request, *args, **kwargs):
-        # print(request.data)
+
         
             
         
@@ -139,10 +143,12 @@ class AccessUserViewSet(mixins.ListModelMixin,
                 'company': "미확인 자",
             }
             serializer = self.get_serializer(data=data)
+            
             serializer.is_valid(raise_exception=True)
             ###serializer.initial_data['photourl'] can be accessed
             # modify them using 
             self.perform_create(serializer)
+        
             headers = self.get_success_headers(serializer.data)
             return Response({'data':serializer.data}, status=status.HTTP_201_CREATED, headers=headers)
         else:
