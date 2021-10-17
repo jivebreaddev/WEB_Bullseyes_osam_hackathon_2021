@@ -51,9 +51,16 @@ class UserViewSet(mixins.ListModelMixin,
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
+            
+            for a in serializer.data:
+                if a['photourl']:
+                    a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        for a in serializer.data:
+            if a['photourl']:
+                a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
         return Response({'data':serializer.data})
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

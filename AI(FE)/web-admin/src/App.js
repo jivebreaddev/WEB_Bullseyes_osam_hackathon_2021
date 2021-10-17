@@ -5,6 +5,7 @@ import { AccessUserCreate, AccessUserShow } from "./AccessUser";
 import AccessUser from "./AccessUser";
 import UserIcon from "@material-ui/icons/Group";
 import AccessUserIcon from "@material-ui/icons/ContactMail";
+import VideocamIcon from '@material-ui/icons/Videocam';
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
 import myDataProvider from "./myDataProvider";
@@ -38,6 +39,7 @@ const App = () => {
       <Resource
         name="StreamingRecognition"
         list={StreamingRecognition}
+        icon={VideocamIcon}
         options={{ label: "실시간신원확인" }}
       />
 
