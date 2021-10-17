@@ -10,21 +10,22 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
-    build: ./APP/bullseyes
+    build: ./AI(BE)/bullseyes
     command: sh -c "python manage.py collectstatic --noinput &&
              python manage.py migrate &&
+             python populate.py&&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./APP/bullseyes:/APP
+      - ./AI(BE)/bullseyes:/APP
     ports:
       - "8000:8000"
     depends_on:
       - db
   front:
-    build: ./WEB/web-admin
+    build: ./AI(FE)/web-admin
     command: ["npm", "start"]
     volumes:
-      - ./WEB/web-admin:/WEB
+      - ./AI(FE)/web-admin:/WEB
     ports:
       - "3000:3000"
     
