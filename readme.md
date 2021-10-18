@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/89078451/137757023-f0c0958e-f75f-4233-a455-9ac754fa4e39.PNG"/>
 </p>
-## 팀 소개
+##팀 소개
 <table>
  <tr>
   <td>사진</td>
