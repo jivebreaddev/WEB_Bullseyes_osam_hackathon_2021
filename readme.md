@@ -16,9 +16,10 @@
   <td>깃허브</td>
   <td>이메일</td>
  </tr>
-   
+
+
  <tr>
-  <td align='center'></td>
+  <td align='center'><img src="https://user-images.githubusercontent.com/89078451/137750834-14457b0d-0d8b-4662-bcc8-a77525631d9e.png"/></td>
   <td align='center'>김범준</td>
   <td align='center'>Front-end</td>
   <td align='center'><a href="https://github.com/Rujang"><img src="http://img.shields.io/badge/Rujang-green?style=social&logo=github"/></a></td>
@@ -26,7 +27,7 @@
  </tr>
 
  <tr>
-  <td align='center'></td>
+  <td align='center'><img src="https://user-images.githubusercontent.com/89078451/137751240-2f39a200-008e-471b-b9ab-06a95b7ecfd1.png"/></td>
   <td align='center'>박시창</td>
   <td align='center'>Back-end</td>
   <td align='center'><a href="https://github.com/jivebreaddev"><img src="http://img.shields.io/badge/jivebreaddev-green?style=social&logo=github"/></a></td>
