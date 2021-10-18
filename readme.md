@@ -75,9 +75,12 @@
  - 3. 건물들에 있는 인원들 출입시간과 남아있는 인원에 대한 추적 가능
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
-* ECMAScript 6 지원 브라우저 사용
+1. 접속 가능한 브라우저
 * 권장: Google Chrome 버젼 77 이상
-
+2. Docker Desktop OR Engine Required
+* 64-bit processor with Second Level Address Translation (SLAT)
+* 4GB system RAM
+* BIOS-level hardware virtualization support must be enabled in the BIOS settings. For more information, see Virtualization.
 ## 기술 스택 (Technique Used) 
 ### Server(back-end)
  -  nodejs, php, java 등 서버 언어 버전 
@@ -95,6 +98,7 @@ $ git clone git주소
 $ yarn or npm install
 $ yarn start or npm run start
 ```
+
 
 ## 프로젝트 사용법 (Getting Started)
 **마크다운 문법을 이용하여 자유롭게 기재**
