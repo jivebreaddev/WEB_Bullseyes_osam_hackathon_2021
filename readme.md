@@ -93,11 +93,33 @@
  - 기타 사용한 라이브러리 (react-admin)
 
 ## 설치 안내 (Installation Process)
+STEP 1 모델 다운로드
+----
+[Model의 개발자는 https://github.com/SamYuen101234/Masked_Face_Recognition 입니다.]
+- 밑 URL 에서 모델을 다운받아주십시오.
+- https://drive.google.com/file/d/1DsMV1R5eqwHiVgfujlCa4NSpqmk-ecor/view?usp=sharing
+그리고 클론된 AI_WEB_Bullseyes_Bullseyes/AI(BE)/bullseyes 에 넣어주시면 됩니다.
+
+STEP 2 불스아이즈 설치
+---
 ```bash
-$ git clone git주소
-$ yarn or npm install
-$ yarn start or npm run start
-```
+$ git clone git@github.com:osamhack2021/AI_WEB_Bullseyes_Bullseyes.git
+#Clone From Github
+
+$ cd AI_WEB_Bullseyes_Bullseyes/AI\(FE\)/web-admin
+#Changing directory to web-admin folder"
+
+$ npm install
+#Installing libs for Frontend"
+
+$ cd ..
+
+
+$ cd ..
+
+
+$ docker-compose up
+#Create docker compose for Django Backend, React Frontend, Postgre SQL "
 
 
 ## 프로젝트 사용법 (Getting Started)
