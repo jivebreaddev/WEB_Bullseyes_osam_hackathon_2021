@@ -77,6 +77,8 @@
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 **접속 가능한 브라우저**
 * 권장: Google Chrome 버젼 77 이상
+
+
 **다커 엔진 혹은 다커 데스크탑 필요**
 * 64-bit processor with Second Level Address Translation (SLAT)
 * 4GB system RAM
