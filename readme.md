@@ -34,8 +34,11 @@
  </tr>
 </table>
 
-## 프로잭트 설명
+## 프로젝트 설명
 - 불스아이즈는 코로나 시대에 모두를 위한 마스크가 안보에 직결된 보안에 위험이 되지않도록 안면인식을 통해 신원에 대한 이중확인을 하고 의심인원에 대한 시스템적인 즉각보고와 기록일지로 보안사건이 발생했을 때 시스템적인 피드백을 줄 수 있는 프로젝트입니다. 
+
+## 서비스 플로우
+![서비스플로우](https://user-images.githubusercontent.com/89078451/137728691-63d69e3d-8a21-4a7d-9ce7-1472377a2e28.PNG)
 
 ## 불스아이즈 기대효과
 
@@ -117,5 +120,6 @@ This project is licensed under the terms of the MIT license.
 ※ [Github 내 라이선스 키워드(클릭)](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository)
 
 ※ [\[참조\] Github license의 종류와 나에게 맞는 라이선스 선택하기(클릭)](https://flyingsquirrel.medium.com/github-license%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EB%82%98%EC%97%90%EA%B2%8C-%EB%A7%9E%EB%8A%94-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0-ae29925e8ff4)
+
 
 
