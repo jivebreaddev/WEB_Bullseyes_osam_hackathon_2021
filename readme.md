@@ -93,45 +93,41 @@
  - 기타 사용한 라이브러리 (react-admin)
 
 ## 설치 안내 (Installation Process)
-STEP 1 모델 다운로드
-----
+** STEP 1 불스아이즈 클론하기
+```bash
+$ git clone git@github.com:osamhack2021/AI_WEB_Bullseyes_Bullseyes.git
+#Clone From Github
+```
+** STEP 2 Front 모듈 설치폴더로 이동하기
+```
+$ cd AI_WEB_Bullseyes_Bullseyes/AI\(FE\)/web-admin
+#Changing directory to web-admin folder"
+```
+** STEP 3 Front 모듈 설치하기
+```
+$ npm install
+#Installing libs for Frontend"
+```
+
+** STEP 4 모델 설치하기
+
 [Model의 개발자는 https://github.com/SamYuen101234/Masked_Face_Recognition 입니다.]
 - 밑 URL 에서 모델을 다운받아주십시오.
 - https://drive.google.com/file/d/1DsMV1R5eqwHiVgfujlCa4NSpqmk-ecor/view?usp=sharing
 그리고 클론된 AI_WEB_Bullseyes_Bullseyes/AI(BE)/bullseyes 에 넣어주시면 됩니다.
 
-STEP 2 불스아이즈 설치
----
+
+
+## 프로젝트 사용법 (Getting Started)
+
+** STEP 1 Docker-compose 시작하기
 ```bash
-$ git clone git@github.com:osamhack2021/AI_WEB_Bullseyes_Bullseyes.git
-#Clone From Github
-
-$ cd AI_WEB_Bullseyes_Bullseyes/AI\(FE\)/web-admin
-#Changing directory to web-admin folder"
-
-$ npm install
-#Installing libs for Frontend"
-
-$ cd ..
-
-
-$ cd ..
-
-
 $ docker-compose up
 #Create docker compose for Django Backend, React Frontend, Postgre SQL "
-
+# 에러 발생시 Ctrl + C 누르고 다시 docker-compose up 하시면 됩니다!
+# DockerCompose 에서 Dependency가 안지켜질때 에러가 납니다.
 ```
-## 프로젝트 사용법 (Getting Started)
-**마크다운 문법을 이용하여 자유롭게 기재**
 
-잘 모를 경우
-구글 검색 - 마크다운 문법
-[https://post.naver.com/viewer/postView.nhn?volumeNo=24627214&memberNo=42458017](https://post.naver.com/viewer/postView.nhn?volumeNo=24627214&memberNo=42458017)
-
- 편한 마크다운 에디터를 찾아서 사용
- 샘플 에디터 [https://stackedit.io/app#](https://stackedit.io/app#)
- 
 ## 팀 정보 (Team Information)
 - kim beom jun (kimbz123@gmail.com), Github Id: Rujang
 - Park Si Chang (jivebreaddev@gmail.com), Github Id: jivebreaddev
@@ -140,12 +136,6 @@ $ docker-compose up
  * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
 
 This project is licensed under the terms of the MIT license.
-
-※ [라이선스 비교표(클릭)](https://olis.or.kr/license/compareGuide.do)
-
-※ [Github 내 라이선스 키워드(클릭)](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository)
-
-※ [\[참조\] Github license의 종류와 나에게 맞는 라이선스 선택하기(클릭)](https://flyingsquirrel.medium.com/github-license%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EB%82%98%EC%97%90%EA%B2%8C-%EB%A7%9E%EB%8A%94-%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0-ae29925e8ff4)
 
 
 
