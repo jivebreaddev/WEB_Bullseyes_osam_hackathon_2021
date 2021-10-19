@@ -230,6 +230,6 @@ $ docker-compose up
  * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
 
 This project is licensed under the terms of the MIT license.
-
+This software uses https://github.com/SamYuen101234/Masked_Face_Recognition
 
 
