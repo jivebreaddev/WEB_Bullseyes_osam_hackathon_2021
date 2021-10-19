@@ -169,6 +169,10 @@ $ docker-compose up
 # DockerCompose 에서 Dependency가 안지켜질때 에러가 납니다.
 ```
 
+**STEP 1 Docker-compose 시작하기**
+
+Chrome Browser로 https://localhost:3000 접속하기
+
 ## 개발시간 타임라인
 ### 9.16 첫 README 작성 및 DEV 
 1. Stack 결정 밑 dev plan set
