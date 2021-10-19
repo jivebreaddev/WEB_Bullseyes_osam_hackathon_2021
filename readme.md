@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/89078451/137757023-f0c0958e-f75f-4233-a455-9ac754fa4e39.PNG"/>
+  <img src="https://user-images.githubusercontent.com/89639413/137863395-60cae552-8b9e-49c2-bc84-54fd3c7070e6.PNG"/>
 </p>
 
 ## 팀 소개
@@ -172,9 +172,64 @@ $ docker-compose up
 # DockerCompose 에서 Dependency가 안지켜질때 에러가 납니다.
 ```
 
-## 팀 정보 (Team Information)
-- kim beom jun (kimbz123@gmail.com), Github Id: Rujang
-- Park Si Chang (jivebreaddev@gmail.com), Github Id: jivebreaddev
+## 개발시간 타임라인
+### 9.16 첫 README 작성
+1. Stack 결정 밑 dev plan set
+2. react_admin
+3. django
+4. model decision
+5. javascript lib faceapi decision
+6. features decisions
+7. data visualization plan
+8. First sample React admin building
+9. Swagger API spec decision
+### 10.01
+1. Django Postgres react containerized 
+2. Rest API with Swagger API declared
+3. Design Mockup complete
+4. Adding Two panels for better Facial Recognition data process
+### 10.02 
+1. Rest api’s model implementation with REST API django 
+### 10.03
+1. Gitignore file set
+2. REST API for photo uploads
+3. REST api modified for better contorls for photo uploads
+4. Prettier Format Applied
+### 10.05
+1. User Access Users tab intergrated
+2. Tables on react hooked to REST API
+### 10.08
+1. Package.json set
+2. Image upload with json rather than direct form
+### 10.09
+1. Filters added on React
+2. Face Detection with FaceAPI has been intergrated to React
+### 10.10 
+1. Sidebar edit has been added for faster edit flow
+2. Bugs on Edit have been spotted
+3. Filters would not work because of backeend Filter Intergration
+### 10.11
+1. Face API will be posting the photo once it detects
+### 10.12
+1. Two tables with Face API has been separated to different tabs considering its react admin’s dataprovider only supports one table at one page
+2. Theme added to improve app bar
+### 10.13
+1. menu appbar design to mock design added.
+2. List theme added
+### 10.14
+1. Background Color and fonts have been added
+### 10.15
+1. Filters intergrated with REST API
+2. integrated model and data for image imbeddings from my own source to create backend’s model for recognition with face mask
+### 10.16
+1. Refactor JS codes to delete unnecessary pieces of codes
+2. Repositories names have been edited
+3. Database Population script for demo has been added.
+### 10.17
+1. Realtime and Video demo UI have been fixed	
+
+
+
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
  * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
