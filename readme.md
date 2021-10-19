@@ -173,7 +173,7 @@ $ docker-compose up
 ```
 
 ## 개발시간 타임라인
-### 9.16 첫 README 작성
+### 9.16 첫 README 작성 및 DEV 
 1. Stack 결정 밑 dev plan set
 2. react_admin
 3. django
@@ -183,49 +183,49 @@ $ docker-compose up
 7. data visualization plan
 8. First sample React admin building
 9. Swagger API spec decision
-### 10.01
+### 10.01 다커화 및 REST API 만들기, 디자인 MOCK 만들기 
 1. Django Postgres react containerized 
 2. Rest API with Swagger API declared
 3. Design Mockup complete
 4. Adding Two panels for better Facial Recognition data process
-### 10.02 
+### 10.02 DJANGO REST API 구현
 1. Rest api’s model implementation with REST API django 
-### 10.03
+### 10.03 REST API photo 업로드 기능 구현, Prettier 적용
 1. Gitignore file set
 2. REST API for photo uploads
 3. REST api modified for better contorls for photo uploads
 4. Prettier Format Applied
-### 10.05
+### 10.05 User Access tab 과 User Tab 통합, REST API 와 연결
 1. User Access Users tab intergrated
 2. Tables on react hooked to REST API
-### 10.08
+### 10.08 Image Upload 를 react에서 구현
 1. Package.json set
 2. Image upload with json rather than direct form
-### 10.09
+### 10.09 React Filters 구현 및 FaceAPI 연결
 1. Filters added on React
 2. Face Detection with FaceAPI has been intergrated to React
-### 10.10 
+### 10.10 SideBar edit 추가로 빠른 edit 구현, 필터에 대한 버그 발견
 1. Sidebar edit has been added for faster edit flow
 2. Bugs on Edit have been spotted
 3. Filters would not work because of backeend Filter Intergration
-### 10.11
+### 10.11 Face API의 서버 포스팅 
 1. Face API will be posting the photo once it detects
-### 10.12
+### 10.12 React Admin 의 테이블 두개를 한페이지에 연동하려고 했다가 실패함. 두개로 나누고, UI 업그레이드함.
 1. Two tables with Face API has been separated to different tabs considering its react admin’s dataprovider only supports one table at one page
 2. Theme added to improve app bar
-### 10.13
+### 10.13 메뉴랑 앱바 디자인 추가
 1. menu appbar design to mock design added.
 2. List theme added
-### 10.14
+### 10.14 배경과 폰트 추가
 1. Background Color and fonts have been added
-### 10.15
+### 10.15 REST API 에 필터 추가, 신원인식 모델 서버에 구현
 1. Filters intergrated with REST API
 2. integrated model and data for image imbeddings from my own source to create backend’s model for recognition with face mask
-### 10.16
+### 10.16 JS 코드 재구성 및 REPOSITORIES 이름 수정
 1. Refactor JS codes to delete unnecessary pieces of codes
 2. Repositories names have been edited
 3. Database Population script for demo has been added.
-### 10.17
+### 10.17 DEMO 와 마지막 GOAL UI 에가까운 UI 구현
 1. Realtime and Video demo UI have been fixed	
 
 
