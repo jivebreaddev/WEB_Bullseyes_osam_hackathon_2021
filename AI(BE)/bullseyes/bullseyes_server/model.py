@@ -1,3 +1,5 @@
+
+#This software uses https://github.com/SamYuen101234/Masked_Face_Recognition
 import torch
 import torch.nn as nn
 #from torchsummary import summary
