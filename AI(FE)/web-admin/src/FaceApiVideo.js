@@ -72,7 +72,7 @@ const VideoDetection = (prop) => {
         setDate(new Date());
         axios({
           method: 'post',
-          url: "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev/accessusers/",
+          url: "http://localhost:8000/accessusers/",
           data: {
             photourl: canvas.toDataURL('image/jpeg', 1), time: date.toISOString()
           }
