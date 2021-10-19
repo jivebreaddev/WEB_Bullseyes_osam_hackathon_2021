@@ -145,6 +145,7 @@ $ cd AI_WEB_Bullseyes_Bullseyes/AI\(FE\)/web-admin
 #Changing directory to web-admin folder"
 ```
 **STEP 3 Front 모듈 설치하기**
+node.js 설치확인, 미설치시 node js 설치 부탁드립니다.
 ```
 $ npm install
 #Installing libs for Frontend"
@@ -156,7 +157,6 @@ $ npm install
 - 밑 URL 에서 모델을 다운받아주십시오.
 - https://drive.google.com/file/d/1DsMV1R5eqwHiVgfujlCa4NSpqmk-ecor/view?usp=sharing
 그리고 클론된 AI_WEB_Bullseyes_Bullseyes/AI(BE)/bullseyes 에 넣어주시면 됩니다.
-
 
 
 ## 프로젝트 사용법 (Getting Started)
