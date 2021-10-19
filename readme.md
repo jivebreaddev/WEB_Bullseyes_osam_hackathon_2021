@@ -36,24 +36,24 @@
 ### 😷사용시나리오 마스크쓰고 신원등록자의 신원인식 1
 |기능|설명|
 |---------|---|
-|![BE_GIF_01_RE](https://user-images.githubusercontent.com/89639413/137857082-cf3f01fc-4332-4c0d-968c-2feba371936e.gif)|**신원 확인**|
-|![BE_PNG_01](https://user-images.githubusercontent.com/89078451/137753690-cbe82b2e-cb49-4a4c-bfd4-e9a0c0c626ed.png)|**입력 확인**|
+|![BE_GIF_01_RE](https://user-images.githubusercontent.com/89639413/137857082-cf3f01fc-4332-4c0d-968c-2feba371936e.gif)|**신원확인**|
+|![BE_PNG_01](https://user-images.githubusercontent.com/89078451/137753690-cbe82b2e-cb49-4a4c-bfd4-e9a0c0c626ed.png)|**입력확인**|
 
 
 
 ### 😎사용시나리오 마스크쓰고 신원등록자의 신원인식 2
 |기능|설명|
 |---------|---|
-|![BE_GIF_02_RE](https://user-images.githubusercontent.com/89639413/137857093-f0636593-97d4-4d1d-9ff3-723c69c5102b.gif)|**신원 확인**|
-|![BE_PNG_02](https://user-images.githubusercontent.com/89078451/137753695-8da2a886-d53c-4336-b2e0-c07effee24a5.png)|**입력 확인**|
+|![BE_GIF_02_RE](https://user-images.githubusercontent.com/89639413/137857093-f0636593-97d4-4d1d-9ff3-723c69c5102b.gif)|**신원확인**|
+|![BE_PNG_02](https://user-images.githubusercontent.com/89078451/137753695-8da2a886-d53c-4336-b2e0-c07effee24a5.png)|**입력확인**|
 
 
 
 ### 👿사용시나리오 마스크쓰고 신원불명의 신원인식
 |기능|설명|
 |---------|---|
-|![BE_GIF_03_RE](https://user-images.githubusercontent.com/89639413/137857110-5d118db6-81de-4ec9-bd22-3264636d8822.gif)|**신원 확인**|
-|![BE_PNG_03](https://user-images.githubusercontent.com/89078451/137753700-4d816236-b80e-40f8-8f70-234286b745c8.png)|**입력 확인**|
+|![BE_GIF_03_RE](https://user-images.githubusercontent.com/89639413/137857110-5d118db6-81de-4ec9-bd22-3264636d8822.gif)|**신원확인**|
+|![BE_PNG_03](https://user-images.githubusercontent.com/89078451/137753700-4d816236-b80e-40f8-8f70-234286b745c8.png)|**입력확인**|
 
 
 
