@@ -81,8 +81,10 @@
 ### 개발문서의 구체성
 전반적인 개발문서의 구체적 표현성
 
-- Projects에 Feature를 생성하여 개발문서 정리
-  
+- 프로젝트의 issues 들로 Features를 Back-end 와 Front-end로 생성하여 개발문서 정리
+- Release 로 한눈에 버전 확인 가능
+- 개발중의 Bugs 들도 Issues 에 기입됨
+
 ### 독창성
 독창성 유무
 
