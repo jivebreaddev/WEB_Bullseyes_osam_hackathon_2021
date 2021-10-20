@@ -31,7 +31,12 @@
 </table>
 
 ## 프로젝트 설명
-- 불스아이즈는 코로나 시대에 모두를 위한 마스크가 안보에 직결된 보안에 위험이 되지않도록 안면인식을 통해 신원에 대한 이중확인을 하고 의심인원에 대한 시스템적인 즉각보고와 기록일지로 보안사건이 발생했을 때 시스템적인 피드백을 줄 수 있는 프로젝트입니다. 
+![1](https://user-images.githubusercontent.com/89639413/138011517-a6828674-ba8a-40ab-b620-30c6ff70074a.PNG)
+
+![2](https://user-images.githubusercontent.com/89639413/138011416-194471ca-ef3f-4165-8eeb-5ee473fcd077.PNG)
+
+
+
 ## 기능 설계
 ### 😷사용시나리오 마스크쓰고 신원등록자의 신원인식 1
 |기능|설명|
@@ -123,15 +128,7 @@
 * 4GB system RAM
 * BIOS-level hardware virtualization support must be enabled in the BIOS settings. For more information, see Virtualization.
 ## 기술 스택 (Technique Used) 
-### Server(back-end)
- -  nodejs, php, java 등 서버 언어 버전 
- - express, laravel, sptring boot 등 사용한 프레임워크 
- - DB 등 사용한 다른 프로그램 
- 
-### Front-end
- -  react.js 사용한 front-end 프레임워크 
- -  UI framework
- - 기타 사용한 라이브러리 (react-admin)
+![image](https://user-images.githubusercontent.com/89639413/138011578-ffc45a9f-a72a-45db-b1db-371c42270783.png)
 
 ## 설치 안내 (Installation Process)
 **STEP 1 불스아이즈 클론하기**
