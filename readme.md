@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/89639413/137863395-60cae552-8b9e-49c2-bc84-54fd3c7070e6.PNG"/>
+  <img src="https://user-images.githubusercontent.com/89639413/138018215-ce232392-32da-4e78-b9c0-44ee2ea7580d.png"/>
 </p>
+
 
 ## 팀 소개
 <table>
