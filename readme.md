@@ -145,6 +145,7 @@ $ cd AI_WEB_Bullseyes_Bullseyes/AI\(FE\)/web-admin
 #Changing directory to web-admin folder"
 ```
 **STEP 3 Front 모듈 설치하기**
+node.js 설치확인, 미설치시 node js 설치 부탁드립니다.
 ```
 $ npm install
 #Installing libs for Frontend"
@@ -158,7 +159,6 @@ $ npm install
 그리고 클론된 AI_WEB_Bullseyes_Bullseyes/AI(BE)/bullseyes 에 넣어주시면 됩니다.
 
 
-
 ## 프로젝트 사용법 (Getting Started)
 
 **STEP 1 Docker-compose 시작하기**
@@ -168,6 +168,10 @@ $ docker-compose up
 # 에러 발생시 Ctrl + C 누르고 다시 docker-compose up 하시면 됩니다!
 # DockerCompose 에서 Dependency가 안지켜질때 에러가 납니다.
 ```
+
+**STEP 2 Chrome 으로 접속하기**
+
+Chrome Browser로 https://localhost:3000 접속하기
 
 ## 개발시간 타임라인
 ### 9.16 첫 README 작성 및 DEV 
