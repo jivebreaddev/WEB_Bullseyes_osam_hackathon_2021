@@ -105,23 +105,20 @@ class AccessUserViewSet(mixins.ListModelMixin,
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            for a in serializer.data:
-                a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
+            # for a in serializer.data:
+            #     a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
             
             return self.get_paginated_response(serializer.data)
         serializer = self.get_serializer(queryset, many=True)
-        for a in serializer.data:
-            a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
+        # for a in serializer.data:
+        #     a['photourl'] =  a['photourl'].replace("http://localhost", "https://osamhack2021-ai-web-bullseyes-bullseyes-7v5x5w6jwfx5xj-8000.githubpreview.dev")
         return Response({'data':serializer.data})
     def create(self, request, *args, **kwargs):
 
-        
-            
-        
         image_data = re.sub('^data:image/.+;base64,', '', request.data['photourl'])
         im = Image.open(BytesIO(base64.b64decode(image_data)))
-        im.save("/APP/media/" + str(1) + '.jpg')
-        im = Image.open("/APP/media/" + str(1) + '.jpg')
+        im.save("/APP/" + str(1) + '.jpg')
+        im = Image.open("/APP/" + str(1) + '.jpg')
         img_embedding = img_to_embedding(im,facenet)
         identity = ""
         minimum = 100.0
